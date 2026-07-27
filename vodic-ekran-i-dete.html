@@ -84,6 +84,13 @@
   .prep li{position:relative;padding-left:30px;color:var(--ink-soft)}
   .prep li strong{color:var(--ink)}
   .prep li::before{content:"";position:absolute;left:0;top:.5em;width:12px;height:12px;border-radius:50%;border:2px solid var(--amber)}
+  .family-visuals{margin:26px 0 8px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .family-shot-card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;box-shadow:var(--shadow)}
+  .family-shot-card img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;border:1px solid var(--line);background:#E7F0FF}
+  .family-shot-card h4{font-size:.96rem;margin:10px 0 3px}
+  .family-shot-card p{font-size:.88rem;line-height:1.42;color:var(--ink-soft);margin:0}
+  .family-title{display:flex;align-items:center;gap:12px}
+  .fl-app-icon{width:52px;height:52px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:#fff;flex:none}
 
   /* ---------- steps / path ---------- */
   .path-head{margin:40px 0 6px}
@@ -285,6 +292,7 @@
   @media(max-width:640px){
     body{font-size:17px}
     .toc,.split,.desc-grid,.cols,.twoside{grid-template-columns:1fr}
+    .family-visuals{grid-template-columns:1fr}
     .axes-grid{grid-template-columns:1fr}
     .path{padding-left:0}.path::before{display:none}
     .step{margin-bottom:24px}
@@ -391,7 +399,7 @@
 
     <div class="define">
       <span class="tag">Jedan alat rešava skoro sve</span>
-      <h3>Google Family Link</h3>
+      <div class="family-title"><img class="fl-app-icon" src="assets/family-link-icon.png" alt="Google Family Link ikonica"><h3>Google Family Link</h3></div>
       <p>Besplatna Google aplikacija koju instaliraš na <strong>svoj</strong> telefon. Preko nje sa svog telefona upravljaš dečjim: vidiš koliko se koja aplikacija koristi, postavljaš vreme, odobravaš instalacije i kupovine, i zaključavaš telefon kad treba. Dete ne mora ništa da podešava.</p>
     </div>
 
@@ -408,6 +416,24 @@
     <div class="path-head">
       <h3>Sedam koraka</h3>
       <p>Prva tri su „instalacija", ostala četiri su podešavanja koja od tada radiš kad god poželiš — sa svog telefona.</p>
+    </div>
+
+    <div class="family-visuals" aria-label="Family Link ekrani u aplikaciji">
+      <div class="family-shot-card">
+        <img src="assets/family-link-shot-1.png" alt="Family Link ekran za vreme ispred ekrana">
+        <h4>Vreme ispred ekrana</h4>
+        <p>Dnevni limiti, rasporedi za spavanje i školsko vreme stoje na jednom mestu.</p>
+      </div>
+      <div class="family-shot-card">
+        <img src="assets/family-link-shot-2.png" alt="Family Link ekran za limite po aplikaciji">
+        <h4>Limit po aplikaciji</h4>
+        <p>Svakoj aplikaciji možeš dati svoje pravilo: limit, blokadu ili neograničeno vreme.</p>
+      </div>
+      <div class="family-shot-card">
+        <img src="assets/family-link-shot-3.png" alt="Family Link ekran za Google Play, YouTube, Chrome, Search i kontakte">
+        <h4>Sadržaj i Play pravila</h4>
+        <p>Tu su Google Play odobrenja, YouTube, Chrome/web, SafeSearch i kontakti.</p>
+      </div>
     </div>
 
     <div class="path">
@@ -456,8 +482,8 @@
         <h4>Odobravanje instalacija i kupovina</h4>
         <p class="goal">Ništa se ne instalira ni ne plaća bez tvog „da".</p>
         <div class="where"><span class="crumb">Dete <i>›</i> <b>Controls</b> <i>›</i> <b>Google Play</b> <i>›</i> <b>Purchase approval</b></span></div>
-        <p>Od tada <strong>svako preuzimanje</strong> i <strong>svaka kupovina</strong> — uključujući kupovine unutar igara (loot box, V-Bucks, gemovi) — traži tvoje odobrenje.</p>
-        <p class="note">Onaj jedan dosadan potez koji skida najveći deo rizika od potrošnje — <b style="color:var(--ink)">bez ijedne svađe</b>.</p>
+        <p>Od tada <strong>svako preuzimanje</strong> i <strong>svaka kupovina</strong> kroz Google Play — uključujući kupovine unutar igara (loot box, V-Bucks, gemovi) — traži tvoje odobrenje.</p>
+        <p class="note">Onaj jedan dosadan potez koji skida najveći deo rizika od potrošnje — <b style="color:var(--ink)">bez ijedne svađe</b>. Ako igra nije preuzeta iz Play prodavnice ili koristi sopstveni sistem plaćanja, proveri i njena posebna roditeljska/potrošačka podešavanja.</p>
       </div></div>
       <div class="step"><div class="step-num">7</div><div class="card">
         <h4>Podesi sadržaj</h4>
@@ -477,7 +503,7 @@
       <ul>
         <li><strong>Ne čini internet bezbednim sam po sebi.</strong><span>Alat je, ne zamena za razgovor. Najbolja zaštita je što dete ume da ti kaže kad naiđe na nešto čudno — bez straha da će mu telefon biti oduzet.</span></li>
         <li><strong>Bistra deca umeju da ga zaobiđu.</strong><span>Npr. Samsung „Bezbedni folder" može sakriti aplikacije — zaključaj ga svojim PIN-om. „Pristupačnost" trikove ograniči u Controls.</span></li>
-        <li><strong>Prestaje kad dete odraste.</strong><span>Kad napuni 13, dete može samo da preuzme svoj nalog. Do tada si izgradio naviku i poverenje — to je jedini alat koji tada ostaje.</span></li>
+        <li><strong>Prestaje kad dete odraste.</strong><span>Kad pređe važeći uzrast za samostalno upravljanje Google nalogom u svojoj zemlji, dete može da preuzme svoj nalog. Do tada si izgradio naviku i poverenje — to je jedini alat koji tada ostaje.</span></li>
       </ul>
     </div>
   </section>

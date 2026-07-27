@@ -153,5 +153,25 @@
     "asset": "pegi-in-game-purchases.png",
     "page": "https://pegi.info/",
     "source": "PEGI"
+  },
+  {
+    "asset": "family-link-icon.png",
+    "source": "Google Play",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.google.android.apps.kids.familylink"
+  },
+  {
+    "asset": "family-link-shot-1.png",
+    "source": "Google Play",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.google.android.apps.kids.familylink"
+  },
+  {
+    "asset": "family-link-shot-2.png",
+    "source": "Google Play",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.google.android.apps.kids.familylink"
+  },
+  {
+    "asset": "family-link-shot-3.png",
+    "source": "Google Play",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.google.android.apps.kids.familylink"
   }
 ]
