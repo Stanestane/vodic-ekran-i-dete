@@ -1,0 +1,157 @@
+[
+  {
+    "asset": "geometry-dash-icon.png",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.robtopx.geometryjump",
+    "source": "Google Play"
+  },
+  {
+    "asset": "geometry-dash-shot.png",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.robtopx.geometryjump",
+    "source": "Google Play"
+  },
+  {
+    "asset": "among-us-icon.png",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.innersloth.spacemafia",
+    "source": "Google Play"
+  },
+  {
+    "asset": "among-us-shot.png",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.innersloth.spacemafia",
+    "source": "Google Play"
+  },
+  {
+    "asset": "minecraft-icon.png",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.mojang.minecraftpe",
+    "source": "Google Play"
+  },
+  {
+    "asset": "minecraft-shot.png",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.mojang.minecraftpe",
+    "source": "Google Play"
+  },
+  {
+    "asset": "stumble-guys-icon.png",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.kitkagames.fallbuddies",
+    "source": "Google Play"
+  },
+  {
+    "asset": "stumble-guys-shot.png",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.kitkagames.fallbuddies",
+    "source": "Google Play"
+  },
+  {
+    "asset": "brawl-stars-icon.png",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.supercell.brawlstars",
+    "source": "Google Play"
+  },
+  {
+    "asset": "brawl-stars-shot.png",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.supercell.brawlstars",
+    "source": "Google Play"
+  },
+  {
+    "asset": "clash-royale-icon.png",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.supercell.clashroyale",
+    "source": "Google Play"
+  },
+  {
+    "asset": "clash-royale-shot.png",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.supercell.clashroyale",
+    "source": "Google Play"
+  },
+  {
+    "asset": "roblox-icon.png",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.roblox.client",
+    "source": "Google Play"
+  },
+  {
+    "asset": "roblox-shot.png",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.roblox.client",
+    "source": "Google Play"
+  },
+  {
+    "asset": "fortnite-icon.png",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.epicgames.fortnite",
+    "source": "Google Play"
+  },
+  {
+    "asset": "fortnite-shot.png",
+    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.epicgames.fortnite",
+    "source": "Google Play"
+  },
+  {
+    "asset": "fall-guys-icon.jpg",
+    "page": "https://www.fallguys.com/?lang=en-US",
+    "source": "Fall Guys / Epic CDN"
+  },
+  {
+    "asset": "fall-guys-shot.jpg",
+    "page": "https://www.fallguys.com/?lang=en-US",
+    "source": "Fall Guys / Epic CDN"
+  },
+  {
+    "asset": "pegi-3.png",
+    "page": "https://pegi.info/",
+    "source": "PEGI"
+  },
+  {
+    "asset": "pegi-7.png",
+    "page": "https://pegi.info/",
+    "source": "PEGI"
+  },
+  {
+    "asset": "pegi-12.png",
+    "page": "https://pegi.info/",
+    "source": "PEGI"
+  },
+  {
+    "asset": "pegi-16.png",
+    "page": "https://pegi.info/",
+    "source": "PEGI"
+  },
+  {
+    "asset": "pegi-18.png",
+    "page": "https://pegi.info/",
+    "source": "PEGI"
+  },
+  {
+    "asset": "pegi-violence.png",
+    "page": "https://pegi.info/",
+    "source": "PEGI"
+  },
+  {
+    "asset": "pegi-bad-language.png",
+    "page": "https://pegi.info/",
+    "source": "PEGI"
+  },
+  {
+    "asset": "pegi-fear.png",
+    "page": "https://pegi.info/",
+    "source": "PEGI"
+  },
+  {
+    "asset": "pegi-sex.png",
+    "page": "https://pegi.info/",
+    "source": "PEGI"
+  },
+  {
+    "asset": "pegi-drugs.png",
+    "page": "https://pegi.info/",
+    "source": "PEGI"
+  },
+  {
+    "asset": "pegi-gambling.png",
+    "page": "https://pegi.info/",
+    "source": "PEGI"
+  },
+  {
+    "asset": "pegi-discrimination.png",
+    "page": "https://pegi.info/",
+    "source": "PEGI"
+  },
+  {
+    "asset": "pegi-in-game-purchases.png",
+    "page": "https://pegi.info/",
+    "source": "PEGI"
+  }
+]

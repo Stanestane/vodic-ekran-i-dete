@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ekran i dete — vodič za roditelje | Nije koliko, nego šta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEFE9;--surface:#F8F9F4;--ink:#16352F;--ink-soft:#4C5C56;
+    --amber:#E0982A;--amber-deep:#B9791A;--green:#3D7C58;--rust:#AE4F2A;--rust-tint:#FBEDE6;
+    --pegi-green:#4E9E5E;--pegi-amber:#E5941F;--pegi-red:#C0392B;
+    --line:rgba(22,53,47,.14);--line-strong:rgba(22,53,47,.28);
+    --shadow:0 1px 2px rgba(22,53,47,.05),0 12px 30px -18px rgba(22,53,47,.28);--r:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Onest",system-ui,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px}
+  h1,h2,h3,h4{font-family:"Bricolage Grotesque","Onest",sans-serif;font-weight:700;line-height:1.07;letter-spacing:-.01em;margin:0}
+  p{margin:0 0 1em}
+  a{color:var(--amber-deep)}
+  strong{font-weight:600}
+  .en{color:var(--ink-soft);font-weight:500;font-style:italic}
+  section[id]{scroll-margin-top:76px}
+
+  /* ---------- NAV ---------- */
+  .nav{position:sticky;top:0;z-index:50;background:rgba(237,239,233,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-in{max-width:920px;margin:0 auto;padding:11px 24px;display:flex;align-items:center;gap:16px}
+  .brand{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.05rem;color:var(--ink);text-decoration:none;white-space:nowrap;flex:none}
+  .brand span{color:var(--amber-deep)}
+  .nav-links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;margin-left:auto}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{font-size:.9rem;font-weight:600;color:var(--ink-soft);text-decoration:none;padding:6px 12px;border-radius:8px;white-space:nowrap;transition:background .2s,color .2s}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-links a.active{color:var(--ink);background:rgba(224,152,42,.16)}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:64px 0 28px}
+  .eyebrow{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-deep);margin-bottom:18px}
+  .hero h1{font-size:clamp(2.5rem,7vw,4.4rem);font-weight:800;max-width:14ch;line-height:1}
+  .hero h1 em{font-style:normal;color:var(--amber-deep)}
+  .hero .lede{font-size:clamp(1.08rem,2.4vw,1.32rem);color:var(--ink-soft);max-width:58ch;margin-top:24px}
+  .hero-art{margin:34px 0 0}
+  .reassure{font-size:1.05rem;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:12px;padding:16px 20px;max-width:62ch;margin-top:26px}
+  .reassure strong{color:var(--green)}
+
+  /* ---------- TOC ---------- */
+  .toc{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:36px 0 0}
+  .toc a{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;text-decoration:none;color:var(--ink);box-shadow:var(--shadow);transition:transform .18s,border-color .18s}
+  .toc a:hover{transform:translateY(-3px);border-color:var(--line-strong)}
+  .toc .n{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;color:var(--amber-deep);font-size:.85rem;letter-spacing:.06em}
+  .toc h3{font-size:1.25rem;margin:6px 0 4px}
+  .toc p{margin:0;color:var(--ink-soft);font-size:.95rem}
+  .toc .go{color:var(--amber-deep);font-weight:700;font-size:.9rem;margin-top:10px;display:inline-block}
+
+  /* ---------- TONIGHT ---------- */
+  .tonight{margin:34px 0 10px;background:var(--ink);color:#EEF3EF;border-radius:var(--r);padding:34px 32px;box-shadow:var(--shadow)}
+  .tonight .tag{display:inline-block;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
+  .tonight h2{color:#fff;font-size:1.7rem;margin-bottom:20px;max-width:22ch}
+  .tonight ol{margin:0;padding:0;counter-reset:t;list-style:none;display:grid;gap:14px}
+  .tonight li{position:relative;padding-left:46px;counter-increment:t;color:#DCE7E1;font-size:1.05rem}
+  .tonight li::before{content:counter(t);position:absolute;left:0;top:-2px;width:30px;height:30px;border-radius:50%;background:var(--amber);color:var(--ink);font-family:"Bricolage Grotesque",sans-serif;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.95rem}
+  .tonight li b{color:#fff;font-weight:600}
+  .tonight .kicker{margin:22px 0 0;color:#B7C7C0;font-size:1rem;border-top:1px solid rgba(255,255,255,.14);padding-top:16px}
+  .tonight .kicker b{color:var(--amber)}
+
+  /* ---------- CHAPTER HEADERS ---------- */
+  .chapter{margin:78px 0 4px;border-top:2px solid var(--line-strong);padding-top:26px}
+  .chapter .cn{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber-deep)}
+  .chapter h2{font-size:clamp(1.9rem,5vw,2.7rem);font-weight:800;margin:8px 0 0}
+  .chapter .intro{color:var(--ink-soft);max-width:60ch;margin-top:12px;font-size:1.06rem}
+
+  /* ---------- shared: define / prep ---------- */
+  .define{margin:30px 0 8px;background:var(--ink);color:#EEF3EF;border-radius:var(--r);padding:28px 30px;box-shadow:var(--shadow)}
+  .define .tag{display:inline-block;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:12px}
+  .define h3{color:#fff;font-size:1.4rem;margin-bottom:8px}
+  .define p{color:#C9D6D0;margin:0;max-width:62ch}
+  .prep{margin:24px 0 10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px 26px}
+  .prep h3{font-size:1.2rem;margin-bottom:14px}
+  .prep ul{list-style:none;margin:0;padding:0;display:grid;gap:11px}
+  .prep li{position:relative;padding-left:30px;color:var(--ink-soft)}
+  .prep li strong{color:var(--ink)}
+  .prep li::before{content:"";position:absolute;left:0;top:.5em;width:12px;height:12px;border-radius:50%;border:2px solid var(--amber)}
+
+  /* ---------- steps / path ---------- */
+  .path-head{margin:40px 0 6px}
+  .path-head h3{font-size:1.5rem;font-weight:800}
+  .path-head p{color:var(--ink-soft);max-width:54ch;margin-top:8px}
+  .path{position:relative;margin-top:24px;padding-left:74px}
+  .path::before{content:"";position:absolute;left:26px;top:14px;bottom:40px;width:2px;background:var(--line-strong);border-radius:2px}
+  .step{position:relative;margin-bottom:18px;opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+  .step.in{opacity:1;transform:none}
+  .step-num{position:absolute;left:-74px;top:2px;width:54px;height:54px;border-radius:50%;background:var(--amber);color:var(--ink);font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:1.4rem;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 6px var(--paper);z-index:2}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px 26px;box-shadow:var(--shadow)}
+  .card h4{font-size:1.28rem;margin-bottom:6px}
+  .goal{font-size:.96rem;color:var(--green);font-weight:600;margin:0 0 14px}
+  .goal::before{content:"→ "}
+  .card p{margin-bottom:.8em}
+  .card p:last-child{margin-bottom:0}
+  .where{background:rgba(22,53,47,.04);border-radius:12px;padding:12px 16px;font-size:.96rem;margin:14px 0}
+  .crumb{display:inline-flex;align-items:center;gap:7px;flex-wrap:wrap;font-weight:600;color:var(--ink)}
+  .crumb i{font-style:normal;color:var(--line-strong)}
+  .crumb b{font-family:"Bricolage Grotesque",sans-serif}
+  .mini{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:9px}
+  .mini li{position:relative;padding-left:24px;font-size:.98rem}
+  .mini li::before{content:"";position:absolute;left:2px;top:.6em;width:8px;height:8px;background:var(--amber);border-radius:2px;transform:rotate(45deg)}
+  .note{font-size:.93rem;color:var(--ink-soft);border-top:1px dashed var(--line-strong);margin-top:16px;padding-top:12px}
+  .note b{color:var(--rust)}
+  .flag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--amber-deep);background:rgba(224,152,42,.14);border-radius:6px;padding:3px 8px;margin-bottom:10px;font-family:"Bricolage Grotesque",sans-serif}
+
+  /* honesty */
+  .honest{margin:34px 0 0;border:1.5px solid var(--line-strong);border-radius:var(--r);padding:26px 28px}
+  .honest h3{font-size:1.4rem;margin-bottom:6px}
+  .honest .sub{color:var(--ink-soft);margin-bottom:18px}
+  .honest ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+  .honest li{position:relative;padding-left:32px}
+  .honest li strong{display:block}
+  .honest li span{color:var(--ink-soft);font-size:.97rem}
+  .honest li::before{content:"!";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:6px;background:var(--rust);color:#fff;font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:.8rem;display:flex;align-items:center;justify-content:center}
+
+  /* ---------- PEGI ---------- */
+  .reframe{margin:30px 0 10px;background:var(--ink);color:#EEF3EF;border-radius:var(--r);padding:30px 32px;box-shadow:var(--shadow)}
+  .reframe .tag{display:inline-block;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
+  .reframe h3{color:#fff;font-size:1.6rem;margin-bottom:20px;max-width:22ch}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .qbox{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.13);border-radius:12px;padding:18px 20px}
+  .qbox.yes{border-left:4px solid var(--green)}
+  .qbox.no{border-left:4px solid var(--rust)}
+  .qbox h4{font-size:1rem;margin-bottom:8px}
+  .qbox.yes h4{color:#88C79A}
+  .qbox.no h4{color:#E39A7C}
+  .qbox p{color:#C4D2CC;font-size:.94rem;margin:0}
+  .qbox em{color:#fff;font-style:normal;font-weight:600}
+  .reframe .punch{margin:22px 0 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);color:#DCE7E1;font-size:1.04rem}
+  .reframe .punch b{color:var(--amber)}
+  .sub-head{margin:40px 0 6px}
+  .sub-head h3{font-size:1.5rem;font-weight:800}
+  .sub-head p{color:var(--ink-soft);max-width:58ch;margin-top:8px}
+  .ages{display:grid;gap:12px;margin-top:20px}
+  .age{display:flex;gap:20px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .age .lab{flex:none;width:72px;height:72px;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-family:"Bricolage Grotesque",sans-serif;line-height:1}
+  .pegi-age-img{flex:none;width:72px;height:72px;object-fit:contain;border-radius:10px}
+  .age .lab .nn{font-size:1.8rem;font-weight:800}
+  .age .lab .pp{font-size:.6rem;letter-spacing:.14em;font-weight:700;margin-top:3px;opacity:.9}
+  .lab.g{background:var(--pegi-green)}.lab.a{background:var(--pegi-amber)}.lab.r{background:var(--pegi-red)}
+  .age .txt h4{font-size:1.08rem;margin-bottom:3px}
+  .age .txt p{margin:0;color:var(--ink-soft);font-size:.96rem}
+  .ages-note{margin-top:14px;font-size:.94rem;color:var(--ink-soft);background:rgba(224,152,42,.1);border-radius:10px;padding:12px 16px}
+  .ages-note b{color:var(--amber-deep)}
+  .desc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:20px}
+  .desc{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 17px}
+  .desc h4{font-size:.98rem;margin-bottom:3px}
+  .desc h4 img{width:34px;height:34px;object-fit:contain;vertical-align:middle;margin-right:8px;border-radius:4px}
+  .desc h4 .en{font-size:.84rem}
+  .desc p{margin:0;color:var(--ink-soft);font-size:.9rem}
+  .desc.hi{border-color:rgba(224,152,42,.4);background:rgba(224,152,42,.07)}
+  .desc-tip{margin-top:16px;background:var(--ink);color:#DCE7E1;border-radius:12px;padding:16px 20px;font-size:.97rem}
+  .desc-tip b{color:var(--amber)}
+  .update{margin-top:20px;background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--amber);border-radius:var(--r);padding:26px 28px;box-shadow:var(--shadow)}
+  .update .flag2{display:inline-block;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--amber-deep);border-radius:6px;padding:4px 10px;margin-bottom:14px}
+  .update h4{font-size:1.25rem;margin-bottom:10px}
+  .update>p{max-width:64ch}
+  .update ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:10px}
+  .update li{position:relative;padding-left:26px;font-size:.97rem}
+  .update li::before{content:"";position:absolute;left:3px;top:.5em;width:9px;height:9px;background:var(--amber);border-radius:2px;transform:rotate(45deg)}
+  .update li b{color:var(--ink)}
+  .caveat{margin-top:18px;background:var(--rust);color:#fff;border-radius:12px;padding:16px 20px}
+  .caveat h5{font-family:"Bricolage Grotesque",sans-serif;margin:0 0 6px;font-size:1rem;font-weight:700}
+  .caveat p{margin:0;color:#FBE7DE;font-size:.96rem}
+  .serbia{margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:24px 28px}
+  .serbia h4{font-size:1.25rem;margin-bottom:14px}
+  .serbia ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+  .serbia li{position:relative;padding-left:30px;color:var(--ink-soft)}
+  .serbia li b{color:var(--ink)}
+  .serbia li::before{content:"";position:absolute;left:2px;top:.15em;width:18px;height:18px;border-radius:50%;background:var(--green)}
+  .serbia li::after{content:"";position:absolute;left:7px;top:.42em;width:7px;height:4px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg)}
+
+  /* ---------- GAMES ---------- */
+  .axes{margin:30px 0 6px;background:var(--ink);color:#EEF3EF;border-radius:var(--r);padding:28px 30px;box-shadow:var(--shadow)}
+  .axes .tag{display:inline-block;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
+  .axes h3{color:#fff;font-size:1.4rem;margin-bottom:8px}
+  .axes .aintro{color:#C9D6D0;max-width:64ch;margin-bottom:20px}
+  .axes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .axis{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px}
+  .axis h4{font-size:1rem;color:#fff;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+  .axis .dot{width:11px;height:11px;border-radius:50%;flex:none}
+  .axis p{color:#B7C7C0;font-size:.91rem;margin:0}
+  .legend{margin:20px 0 8px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px 22px;font-size:.94rem;color:var(--ink-soft)}
+  .legend b{color:var(--ink)}
+  .legend .row{display:flex;flex-wrap:wrap;gap:18px;margin-top:10px}
+  .legend .item{display:flex;align-items:center;gap:8px}
+  .swatch{width:14px;height:14px;border-radius:4px;flex:none}
+  .legend .lootnote{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line-strong)}
+  .games{margin:14px 0 0;display:grid;gap:20px}
+  .game{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--line-strong);border-radius:var(--r);padding:24px 26px;box-shadow:var(--shadow)}
+  .game.lvl-low{border-left-color:var(--green)}.game.lvl-med{border-left-color:var(--amber)}.game.lvl-high{border-left-color:var(--rust)}
+  .g-head{display:flex;align-items:baseline;flex-wrap:wrap;gap:8px 14px;margin-bottom:4px}
+  .g-head h3{font-size:1.5rem;font-weight:800}
+  .g-cat{font-size:.88rem;color:var(--ink-soft);font-weight:500}
+  .g-desc{color:var(--ink-soft);margin:6px 0 16px;max-width:66ch}
+  .game-media{display:grid;grid-template-columns:82px 1fr;gap:14px;align-items:stretch;margin:0 0 16px}
+  .game-icon{width:82px;height:82px;object-fit:cover;border-radius:18px;border:1px solid var(--line);background:#fff;box-shadow:var(--shadow)}
+  .game-shot{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px;border:1px solid var(--line);background:rgba(22,53,47,.06)}
+  .cautions{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+  .ctag{display:inline-flex;align-items:center;gap:6px;font-size:.81rem;font-weight:600;border-radius:999px;padding:5px 12px;border:1px solid var(--line)}
+  .ctag.min{color:var(--green);background:rgba(61,124,88,.09);border-color:rgba(61,124,88,.3)}
+  .ctag.people{color:var(--rust);background:rgba(174,79,42,.08);border-color:rgba(174,79,42,.28)}
+  .ctag.money{color:var(--amber-deep);background:rgba(224,152,42,.12);border-color:rgba(224,152,42,.35)}
+  .ctag.time,.ctag.comp,.ctag.ads{color:var(--ink-soft);background:rgba(22,53,47,.05)}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .col h4{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-family:"Bricolage Grotesque",sans-serif;margin-bottom:10px}
+  .col.good h4{color:var(--green)}.col.watch h4{color:var(--rust)}
+  .col ul{list-style:none;margin:0;padding:0;display:grid;gap:9px}
+  .col li{position:relative;padding-left:24px;font-size:.96rem;line-height:1.5}
+  .col.good li::before{content:"";position:absolute;left:3px;top:.42em;width:9px;height:9px;border-radius:50%;background:var(--green)}
+  .col.watch li::before{content:"";position:absolute;left:2px;top:.5em;width:9px;height:9px;background:var(--rust);border-radius:2px;transform:rotate(45deg)}
+  .meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+  .badge{display:inline-flex;align-items:center;gap:7px;font-size:.83rem;border:1px solid var(--line);border-radius:10px;padding:7px 12px;background:var(--paper)}
+  .badge .k{font-weight:700;font-family:"Bricolage Grotesque",sans-serif;font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-soft)}
+  .badge .v{font-weight:600}
+  .v.no{color:var(--green)}.v.yes{color:var(--rust)}.v.mid{color:var(--amber-deep)}
+  .pegi{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;background:var(--ink);color:#fff;border-radius:8px;padding:3px 9px;font-size:.83rem}
+
+  /* ---------- MONEY ---------- */
+  .rules{margin:30px 0 10px;background:var(--ink);color:#EEF3EF;border-radius:var(--r);padding:30px 32px;box-shadow:var(--shadow)}
+  .rules .tag{display:inline-block;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:14px}
+  .rules h3{color:#fff;font-size:1.55rem;margin-bottom:10px}
+  .rules .rintro{color:#C9D6D0;max-width:60ch;margin-bottom:24px}
+  .rules ol{margin:0;padding:0;list-style:none;counter-reset:r;display:grid;gap:20px}
+  .rules li{position:relative;padding-left:52px;counter-increment:r}
+  .rules li::before{content:counter(r);position:absolute;left:0;top:-3px;width:34px;height:34px;border-radius:50%;background:var(--amber);color:var(--ink);font-family:"Bricolage Grotesque",sans-serif;font-weight:800;display:flex;align-items:center;justify-content:center}
+  .rules li h4{color:#fff;font-size:1.08rem;margin-bottom:4px}
+  .rules li h4 .en{color:#9FB3AC}
+  .rules li p{color:#C4D2CC;margin:0;font-size:.96rem}
+  .rules li b{color:#fff}
+  .mtype{margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px 30px;box-shadow:var(--shadow)}
+  .mtype .num{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:.88rem;color:var(--amber-deep);letter-spacing:.08em;margin-bottom:6px}
+  .mtype h3{font-size:1.35rem}
+  .mtype .msub{color:var(--ink-soft);font-size:.93rem;margin:2px 0 16px}
+  .mtype>p{max-width:66ch}
+  .keypt{background:rgba(61,124,88,.09);border-left:4px solid var(--green);border-radius:10px;padding:14px 18px;margin-top:16px;font-size:.97rem}
+  .keypt b{color:var(--green)}
+  .mtype.ads{background:var(--rust-tint);border-color:rgba(174,79,42,.35);border-left:6px solid var(--rust)}
+  .mtype.ads .num{color:var(--rust)}
+  .ads .rflag{display:inline-block;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--rust);border-radius:6px;padding:4px 10px;margin-bottom:14px}
+  .ads .lead{font-size:1.06rem;font-weight:600;color:var(--rust);max-width:64ch}
+  .ads ul{list-style:none;margin:18px 0 0;padding:0;display:grid;gap:14px}
+  .ads li{position:relative;padding-left:30px}
+  .ads li::before{content:"";position:absolute;left:4px;top:.5em;width:10px;height:10px;background:var(--rust);border-radius:2px;transform:rotate(45deg)}
+  .ads li b{color:var(--ink)}.ads li span{color:var(--ink-soft)}
+  .ads .do{background:#fff;border:1px solid rgba(174,79,42,.3);border-radius:12px;padding:16px 20px;margin-top:20px;font-size:.97rem}
+  .ads .do b{color:var(--rust)}
+  .twoside{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+  .side{border-radius:12px;padding:16px 18px;font-size:.96rem}
+  .side h4{font-family:"Bricolage Grotesque",sans-serif;font-size:.97rem;margin:0 0 6px}
+  .side.kinder{background:rgba(61,124,88,.08)}.side.kinder h4{color:var(--green)}
+  .side.bet{background:rgba(174,79,42,.08)}.side.bet h4{color:var(--rust)}
+  .side p{margin:0;color:var(--ink-soft)}
+  .verdict{border-top:1px dashed var(--line-strong);margin-top:18px;padding-top:16px;font-size:.99rem}
+  .verdict b{color:var(--ink)}
+  .recap{margin:24px 0 10px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px 30px}
+  .recap h3{font-size:1.35rem;margin-bottom:14px}
+  .recap ul{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+  .recap li{position:relative;padding-left:32px}
+  .recap li::before{content:"";position:absolute;left:0;top:.15em;width:20px;height:20px;border-radius:50%;background:var(--green)}
+  .recap li::after{content:"";position:absolute;left:6px;top:.5em;width:8px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg)}
+  .recap li b{color:var(--ink)}.recap li span{color:var(--ink-soft)}
+
+  /* ---------- FOOTER ---------- */
+  footer{margin-top:72px;border-top:2px solid var(--line-strong);padding:34px 0 80px}
+  footer h3{font-size:1.3rem;margin-bottom:10px}
+  footer p{color:var(--ink-soft);font-size:.95rem;max-width:66ch}
+  .share{margin-top:18px;font-size:.95rem;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+  .share b{color:var(--ink)}
+
+  .totop{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;background:var(--ink);color:#fff;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .25s;box-shadow:var(--shadow);z-index:40}
+  .totop.show{opacity:1;pointer-events:auto}
+  .totop svg{width:20px;height:20px}
+
+  :focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
+
+  @media(max-width:640px){
+    body{font-size:17px}
+    .toc,.split,.desc-grid,.cols,.twoside{grid-template-columns:1fr}
+    .axes-grid{grid-template-columns:1fr}
+    .path{padding-left:0}.path::before{display:none}
+    .step{margin-bottom:24px}
+    .step-num{position:static;box-shadow:none;width:44px;height:44px;font-size:1.15rem;margin-bottom:12px}
+    .define,.tonight,.prep,.honest,.reframe,.axes,.rules,.mtype,.recap,.serbia,.update{padding-left:22px;padding-right:22px}
+    .game{border-left-width:5px}
+    .game-media{grid-template-columns:62px 1fr;gap:10px}
+    .game-icon{width:62px;height:62px;border-radius:14px}
+    .age .lab{width:62px;height:62px}.age .lab .nn{font-size:1.5rem}
+    .pegi-age-img{width:62px;height:62px}
+  }
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    .step{opacity:1;transform:none;transition:none}
+    .toc a{transition:none}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top">Ekran<span>·</span>dete</a>
+    <nav class="nav-links">
+      <a href="#telefon">Telefon</a>
+      <a href="#pegi">PEGI</a>
+      <a href="#igre">Igre</a>
+      <a href="#novac">Novac</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="eyebrow">Vodič za roditelje</div>
+    <h1>Nije koliko — <em>nego šta</em>.</h1>
+    <p class="lede">Jedan sat pravljenja nečega u Minecraft-u i jedan sat beskonačnog skrolovanja nisu ista stvar. Većina saveta roditeljima govori samo o količini vremena. Ovaj vodič je o onome što je zapravo važno — o kvalitetu onoga što dete radi na ekranu, i o tome kako da to jednostavno urediš.</p>
+
+    <div class="hero-art" aria-hidden="true">
+      <svg width="100%" height="140" viewBox="0 0 620 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="presentation">
+        <rect x="14" y="16" width="82" height="112" rx="13" fill="#F8F9F4" stroke="#16352F" stroke-width="2.5"/>
+        <rect x="26" y="34" width="58" height="9" rx="4.5" fill="#E0982A"/>
+        <rect x="26" y="51" width="44" height="7" rx="3.5" fill="#16352F" opacity=".3"/>
+        <rect x="26" y="66" width="58" height="7" rx="3.5" fill="#16352F" opacity=".18"/>
+        <rect x="26" y="79" width="50" height="7" rx="3.5" fill="#16352F" opacity=".18"/>
+        <circle cx="34" cy="108" r="7" fill="none" stroke="#3D7C58" stroke-width="2.5"/>
+        <path d="M31 108l2.4 2.4 4.2-4.6" stroke="#3D7C58" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M108 72 H200" stroke="#16352F" stroke-width="2.5" stroke-dasharray="3 7" stroke-linecap="round"/>
+        <circle cx="154" cy="72" r="14" fill="#EDEFE9" stroke="#B9791A" stroke-width="2.5"/>
+        <path d="M149 72a5 5 0 0 1 5-5M159 72a5 5 0 0 1-5 5" stroke="#B9791A" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M151 72h6" stroke="#B9791A" stroke-width="2.5" stroke-linecap="round"/>
+        <rect x="212" y="26" width="74" height="102" rx="12" fill="#F8F9F4" stroke="#16352F" stroke-width="2.5"/>
+        <rect x="234" y="22" width="30" height="7" rx="3.5" fill="#16352F"/>
+        <rect x="224" y="42" width="22" height="22" rx="6" fill="#E0982A" opacity=".9"/>
+        <rect x="252" y="42" width="22" height="22" rx="6" fill="#16352F" opacity=".16"/>
+        <rect x="224" y="72" width="22" height="22" rx="6" fill="#16352F" opacity=".16"/>
+        <rect x="252" y="72" width="22" height="22" rx="6" fill="#3D7C58" opacity=".85"/>
+        <circle cx="348" cy="54" r="23" fill="none" stroke="#16352F" stroke-width="2.5"/>
+        <path d="M348 40v14l9 6" stroke="#E0982A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <text x="348" y="98" font-family="Bricolage Grotesque, sans-serif" font-size="11" font-weight="700" fill="#4C5C56" text-anchor="middle">vreme</text>
+        <rect x="416" y="46" width="34" height="28" rx="6" fill="none" stroke="#16352F" stroke-width="2.5"/>
+        <path d="M423 46v-6a10 10 0 0 1 20 0v6" fill="none" stroke="#16352F" stroke-width="2.5"/>
+        <circle cx="433" cy="60" r="4" fill="#E0982A"/>
+        <text x="433" y="98" font-family="Bricolage Grotesque, sans-serif" font-size="11" font-weight="700" fill="#4C5C56" text-anchor="middle">granice</text>
+        <circle cx="516" cy="60" r="21" fill="none" stroke="#16352F" stroke-width="2.5"/>
+        <text x="516" y="67" font-family="Bricolage Grotesque, sans-serif" font-size="21" font-weight="800" fill="#E0982A" text-anchor="middle">€</text>
+        <text x="516" y="98" font-family="Bricolage Grotesque, sans-serif" font-size="11" font-weight="700" fill="#4C5C56" text-anchor="middle">novac</text>
+      </svg>
+    </div>
+
+    <p class="reassure">Da bude jasno odmah: cilj nije da <strong>oduzmeš</strong> detetu telefon ni da ga špijuniraš. Cilj je da <strong>ti biraš</strong> šta i koliko — a sve ostalo mirno pustiš. Nekoliko dosadnih podešavanja, jednom, i najveći deo brige nestane.</p>
+
+    <!-- TOC -->
+    <div class="toc">
+      <a href="#telefon"><span class="n">01</span><h3>Telefon pod kontrolom</h3><p>Napravi dečji nalog, ograniči vreme i svaku aplikaciju posebno.</p><span class="go">Otvori →</span></a>
+      <a href="#pegi"><span class="n">02</span><h3>PEGI oznake</h3><p>Šta uzrasne oznake znače — a šta ne govore o igri.</p><span class="go">Otvori →</span></a>
+      <a href="#igre"><span class="n">03</span><h3>Popularne igre</h3><p>Devet naslova: šta razvijaju i na šta da paziš.</p><span class="go">Otvori →</span></a>
+      <a href="#novac"><span class="n">04</span><h3>Novac u igrama</h3><p>Kupovine, reklame i nasumične nagrade — i kako ih držati pod kontrolom.</p><span class="go">Otvori →</span></a>
+    </div>
+
+    <!-- TONIGHT -->
+    <div class="tonight">
+      <span class="tag">Ako pročitaš samo jedno</span>
+      <h2>Tri stvari koje možeš večeras</h2>
+      <ol>
+        <li><b>Instaliraj Family Link</b> i poveži dečji telefon <em>(deo „Telefon", koraci 1–3)</em>.</li>
+        <li><b>Uključi odobravanje kupovina</b> i šifru za svaku kupovinu <em>(deo „Novac")</em>.</li>
+        <li><b>Postavi jedan realan dnevni limit</b> i vreme za spavanje <em>(deo „Telefon", korak 4)</em>.</li>
+      </ol>
+      <p class="kicker">Ostalo doteruj kasnije, u miru. Ova <b>tri koraka</b> pokrivaju najveći deo zaštite — vreme, potrošnju i osnovnu strukturu.</p>
+    </div>
+  </section>
+
+  <!-- ============ 1. TELEFON ============ -->
+  <section id="telefon">
+    <div class="chapter">
+      <div class="cn">Deo 01</div>
+      <h2>Telefon pod tvojom kontrolom</h2>
+      <p class="intro">Svaki Android telefon već ima ugrađene alate kojima biraš koliko telefon radi, koje se aplikacije instaliraju i koliko traje svaka pojedinačno. Većina roditelja i ne zna da postoje.</p>
+    </div>
+
+    <div class="define">
+      <span class="tag">Jedan alat rešava skoro sve</span>
+      <h3>Google Family Link</h3>
+      <p>Besplatna Google aplikacija koju instaliraš na <strong>svoj</strong> telefon. Preko nje sa svog telefona upravljaš dečjim: vidiš koliko se koja aplikacija koristi, postavljaš vreme, odobravaš instalacije i kupovine, i zaključavaš telefon kad treba. Dete ne mora ništa da podešava.</p>
+    </div>
+
+    <div class="prep">
+      <h3>Pre nego što počneš</h3>
+      <ul>
+        <li><strong>Tvoj telefon</strong> sa tvojim Google (Gmail) nalogom — na njega ide upravljanje.</li>
+        <li><strong>Dečji Android telefon</strong> pri ruci — najbolje da je dete pored tebe.</li>
+        <li><strong>Oko 20 minuta</strong> mira. Ne mora sve odjednom.</li>
+        <li>Ako dete <strong>već ima nalog i telefon</strong>, ne praviš novo — samo dodaješ nadzor na postojeći.</li>
+      </ul>
+    </div>
+
+    <div class="path-head">
+      <h3>Sedam koraka</h3>
+      <p>Prva tri su „instalacija", ostala četiri su podešavanja koja od tada radiš kad god poželiš — sa svog telefona.</p>
+    </div>
+
+    <div class="path">
+      <div class="step"><div class="step-num">1</div><div class="card">
+        <h4>Postavi Family Link na svoj telefon</h4>
+        <p class="goal">Dobijaš komandnu tablu na svom telefonu.</p>
+        <p>U <strong>Play prodavnici</strong> potraži <strong>„Family Link"</strong> i instaliraj je. Prijavi se svojim Google nalogom, izaberi da si <strong>roditelj</strong> i napravi <strong>porodičnu grupu</strong>.</p>
+      </div></div>
+      <div class="step"><div class="step-num">2</div><div class="card">
+        <h4>Napravi (ili poveži) dečji nalog</h4>
+        <p class="goal">Dete dobija nalog koji ti nadgledaš.</p>
+        <p>U Family Link-u dodaj dete. Nema nalog → <strong>„Napravi nalog za dete"</strong>. Već ima Gmail → <strong>„Dodaj nadzor"</strong> na postojeći.</p>
+        <p class="note">Google traži tvoju saglasnost i simboličnu proveru kartice — <b>ne naplaćuje se</b>. Za decu mlađu od 13 nalog mora biti pod nadzorom.</p>
+      </div></div>
+      <div class="step"><div class="step-num">3</div><div class="card">
+        <h4>Poveži dečji telefon</h4>
+        <p class="goal">Telefon i nalog su spojeni s tvojom kontrolom.</p>
+        <p>Na <strong>dečjem</strong> telefonu prijavi se dečjim nalogom (<strong>Podešavanja → Nalozi</strong>, ili pri prvom paljenju). Potvrdi nadzor sa svog telefona. Ostani uz dete dok se povezuje.</p>
+      </div></div>
+      <div class="step"><div class="step-num">4</div><div class="card">
+        <h4>Podesi vreme</h4>
+        <p class="goal">Telefon radi onoliko koliko ti kažeš — i sam se smiruje uveče.</p>
+        <div class="where"><span class="crumb">Izaberi dete <i>›</i> <b>Screen time</b> (Vreme ispred ekrana)</span></div>
+        <ul class="mini">
+          <li><strong>Dnevni limit</strong> — koliko sati dnevno; može različito radnim danom i vikendom.</li>
+          <li><strong>Downtime / Spavanje</strong> — telefon se sam zaključa (npr. 21h–7h).</li>
+          <li><strong>School Time / Škola</strong> — tokom časova samo osnovne aplikacije.</li>
+          <li><strong>Bonus vreme</strong> — izuzetak bez menjanja stalnih pravila.</li>
+        </ul>
+        <p class="note">Savet: počni <b style="color:var(--ink)">realno</b>, ne drakonski — pravila koja prate ritam porodice se lakše poštuju.</p>
+      </div></div>
+      <div class="step"><div class="step-num">5</div><div class="card">
+        <span class="flag">Ovo skoro niko ne zna da postoji</span>
+        <h4>Ograniči svaku aplikaciju posebno</h4>
+        <p class="goal">Ne „koliko telefona", nego „koliko čega".</p>
+        <div class="where"><span class="crumb"><b>Screen time</b> <i>›</i> <b>Time limits</b> <i>›</i> <b>App limits</b></span></div>
+        <ul class="mini">
+          <li><strong>Limit po aplikaciji</strong> — npr. TikTok 30 min, igra 1h.</li>
+          <li><strong>Blokiraj aplikaciju</strong> — nestane dok je ti ne vratiš.</li>
+          <li><strong>„Neograničeno vreme"</strong> za korisne (čitanje, škola) — ne troše dnevni limit.</li>
+        </ul>
+        <p class="note"><b>Važno:</b> sistemske aplikacije (Telefon, Poruke, Google) ne mogu da se ograniče — i to je u redu.</p>
+      </div></div>
+      <div class="step"><div class="step-num">6</div><div class="card">
+        <span class="flag">Najvažnije jedno dugme</span>
+        <h4>Odobravanje instalacija i kupovina</h4>
+        <p class="goal">Ništa se ne instalira ni ne plaća bez tvog „da".</p>
+        <div class="where"><span class="crumb">Dete <i>›</i> <b>Controls</b> <i>›</i> <b>Google Play</b> <i>›</i> <b>Purchase approval</b></span></div>
+        <p>Od tada <strong>svako preuzimanje</strong> i <strong>svaka kupovina</strong> — uključujući kupovine unutar igara (loot box, V-Bucks, gemovi) — traži tvoje odobrenje.</p>
+        <p class="note">Onaj jedan dosadan potez koji skida najveći deo rizika od potrošnje — <b style="color:var(--ink)">bez ijedne svađe</b>.</p>
+      </div></div>
+      <div class="step"><div class="step-num">7</div><div class="card">
+        <h4>Podesi sadržaj</h4>
+        <p class="goal">Ono što stiže do deteta odgovara uzrastu.</p>
+        <ul class="mini">
+          <li><strong>Play prodavnica</strong> — ograniči po uzrasnoj oznaci (o tome deo „PEGI").</li>
+          <li><strong>YouTube</strong> — nadzirani režim ili YouTube Kids.</li>
+          <li><strong>Pretraga</strong> — SafeSearch uključen.</li>
+          <li><strong>Kontakti</strong> (noviji Android) — odobravaj s kim se dete dopisuje.</li>
+        </ul>
+      </div></div>
+    </div>
+
+    <div class="honest">
+      <h3>Šta Family Link ne može</h3>
+      <p class="sub">Da ne bi imao lažan osećaj sigurnosti — jer to je gore od nikakvog.</p>
+      <ul>
+        <li><strong>Ne čini internet bezbednim sam po sebi.</strong><span>Alat je, ne zamena za razgovor. Najbolja zaštita je što dete ume da ti kaže kad naiđe na nešto čudno — bez straha da će mu telefon biti oduzet.</span></li>
+        <li><strong>Bistra deca umeju da ga zaobiđu.</strong><span>Npr. Samsung „Bezbedni folder" može sakriti aplikacije — zaključaj ga svojim PIN-om. „Pristupačnost" trikove ograniči u Controls.</span></li>
+        <li><strong>Prestaje kad dete odraste.</strong><span>Kad napuni 13, dete može samo da preuzme svoj nalog. Do tada si izgradio naviku i poverenje — to je jedini alat koji tada ostaje.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 2. PEGI ============ -->
+  <section id="pegi">
+    <div class="chapter">
+      <div class="cn">Deo 02</div>
+      <h2>PEGI oznake: šta znače — a šta ne</h2>
+      <p class="intro">PEGI je oznaka koju vidiš na svakoj igri. Kaže ti za koji je uzrast primerena — ali <strong>ne</strong> kaže da li je igra dobra za tvoje dete. To su dve različite stvari, i baš tu većina roditelja pogreši.</p>
+    </div>
+
+    <div class="reframe">
+      <span class="tag">Najvažnija stvar u ovom delu</span>
+      <h3>PEGI meri primerenost, ne vrednost</h3>
+      <div class="split">
+        <div class="qbox yes"><h4>Na šta PEGI odgovara</h4><p><em>„Ima li ovde nasilja, straha, psovki, seksa, kockanja, kupovina ili ćaskanja — i koliko?"</em> Dakle: primerenost sadržaja uzrastu.</p></div>
+        <div class="qbox no"><h4>Na šta PEGI NE odgovara</h4><p><em>„Je li ova igra dobra za moje dete? Da li nešto razvija, ili je prazna?"</em> To PEGI ne meri — čak ni ne gleda težinu igre.</p></div>
+      </div>
+      <p class="punch">Zato: igra sa oznakom <b>3</b> može biti potpuno prazna, a igra sa oznakom <b>12</b> može biti odlična za dete. Koristi PEGI da <b>odsečeš neprimereno</b> — a za „dobro ili loše" gledaj deo o igrama i svoju procenu.</p>
+    </div>
+
+    <div class="sub-head"><h3>Pet oznaka uzrasta</h3><p>Zelena je bezbrižna, žuta traži pažnju, crvena je za odrasle.</p></div>
+    <div class="ages">
+      <div class="age"><img class="pegi-age-img" src="assets/pegi-3.png" alt="PEGI 3"><div class="txt"><h4>Primereno svima</h4><p>Bez zastrašujućeg sadržaja. Najviše vrlo blago, crtano „nasilje".</p></div></div>
+      <div class="age"><img class="pegi-age-img" src="assets/pegi-7.png" alt="PEGI 7"><div class="txt"><h4>Od 7 godina</h4><p>Kao 3, ali može imati prizore ili zvuke koji uplaše najmlađe, ili blago nerealno nasilje.</p></div></div>
+      <div class="age"><img class="pegi-age-img" src="assets/pegi-12.png" alt="PEGI 12"><div class="txt"><h4>Od 12 godina</h4><p>Nasilje u fantazijskom svetu ili prema likovima nalik ljudima, blage psovke i nagoveštaji.</p></div></div>
+      <div class="age"><img class="pegi-age-img" src="assets/pegi-16.png" alt="PEGI 16"><div class="txt"><h4>Od 16 godina</h4><p>Realističnije nasilje, jače psovke, nagoveštaji seksa, prikaz droge/alkohola/duvana.</p></div></div>
+      <div class="age"><img class="pegi-age-img" src="assets/pegi-18.png" alt="PEGI 18"><div class="txt"><h4>Samo za odrasle</h4><p>Gruba nasilja, eksplicitan seks, glorifikacija droge, simulacija kockanja.</p></div></div>
+    </div>
+    <p class="ages-note"><b>Zapamti:</b> PEGI gleda samo sadržaj — ne koliko je igra teška ni koliko veštine traži. Zato lak i prazan naslov i zahtevna, vredna igra mogu nositi istu oznaku.</p>
+
+    <div class="sub-head"><h3>Male ikonice — često korisnije od broja</h3><p>Pored broja stoje ikonice koje kažu <strong>zašto</strong> je igra tako ocenjena.</p></div>
+    <div class="desc-grid">
+      <div class="desc"><h4><img src="assets/pegi-violence.png" alt="">Nasilje <span class="en">(Violence)</span></h4><p>Od crtanog pada do realističnih prizora.</p></div>
+      <div class="desc"><h4><img src="assets/pegi-bad-language.png" alt="">Ružan jezik <span class="en">(Bad Language)</span></h4><p>Psovke — blage (12) ili jake (16, 18).</p></div>
+      <div class="desc"><h4><img src="assets/pegi-fear.png" alt="">Strah / Horor <span class="en">(Fear / Horror)</span></h4><p>Prizori ili zvuci koji plaše mlađu decu.</p></div>
+      <div class="desc"><h4><img src="assets/pegi-sex.png" alt="">Seks <span class="en">(Sex)</span></h4><p>Od nagoveštaja (12) do eksplicitnog (18).</p></div>
+      <div class="desc"><h4><img src="assets/pegi-drugs.png" alt="">Droga <span class="en">(Drugs)</span></h4><p>Droga, alkohol, duvan — uvek 16 ili 18.</p></div>
+      <div class="desc"><h4><img src="assets/pegi-gambling.png" alt="">Kockanje <span class="en">(Gambling)</span></h4><p>Elementi ili simulacija kockanja.</p></div>
+      <div class="desc"><h4><img src="assets/pegi-discrimination.png" alt="">Diskriminacija <span class="en">(Discrimination)</span></h4><p>Diskriminatorni jezik ili prikazi.</p></div>
+      <div class="desc hi"><h4><img src="assets/pegi-in-game-purchases.png" alt="">Kupovine u igri <span class="en">(In-Game Purchases)</span></h4><p>Mikrotransakcije, valuta, „iznenađenja", pa i plaćanje da se uklone reklame.</p></div>
+    </div>
+    <p class="desc-tip"><b>Praktičan savet:</b> ako vidiš ikonice <b>„Kupovine u igri"</b> ili <b>„Kockanje"</b> — to je znak da uključiš pravila iz dela o novcu.</p>
+
+    <div class="update">
+      <span class="flag2">Novo od juna 2026.</span>
+      <h4>PEGI je pooštrio pravila oko novca i ćaskanja</h4>
+      <p>Ranije su kupovine i loot box-ovi bili samo sitna ikonica koja nije dizala broj. Za <strong>nove</strong> igre, od juna 2026, te stvari sada dižu i samu oznaku:</p>
+      <ul>
+        <li><b>Loot box i plaćene nasumične stavke</b> → najmanje PEGI 16 („social casino" → 18).</li>
+        <li><b>Vremenski/količinski ograničene ponude</b> → najmanje PEGI 12.</li>
+        <li><b>NFT / kripto mehanike</b> → automatski PEGI 18.</li>
+        <li><b>Mehanike koje te mame da se vraćaš</b> (dnevni zadaci, nizovi) → najmanje PEGI 7.</li>
+        <li><b>Ćaskanje i komunikacija</b> → nova kategorija rizika u oceni.</li>
+      </ul>
+      <div class="caveat"><h5>Ali pazi na starije igre</h5><p>Igre ocenjene <strong>pre</strong> juna 2026. se ne ocenjuju ponovo. Popularan stariji naslov može i dalje nositi PEGI 12 a imati pun loot box sistem. Zato kod poznatih starijih igara gledaj i ikonice, ne samo broj.</p></div>
+    </div>
+
+    <div class="serbia">
+      <h4>Kako to izgleda u Srbiji</h4>
+      <ul>
+        <li><b>U Srbiji Play prodavnica prikazuje baš PEGI oznake</b> — kroz IARC sistem, gde jedan upitnik napravi PEGI za Evropu, ESRB za Ameriku, itd.</li>
+        <li><b>Ista igra može imati različitu oznaku u različitim zemljama</b> — za tebe važi PEGI.</li>
+        <li><b>Gde da je vidiš:</b> na stranici igre u Play prodavnici, ispod imena; niže piše i „zašto".</li>
+        <li><b>Alat:</b> besplatna <strong>PEGI aplikacija</strong> i sajt <strong>pegi.info</strong> — dostupno i na srpskom.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 3. IGRE ============ -->
+  <section id="igre">
+    <div class="chapter">
+      <div class="cn">Deo 03</div>
+      <h2>Popularne igre: šta razvijaju, na šta da paziš</h2>
+      <p class="intro">Pošten pregled devet najpopularnijih — poređane od onih koje traže najmanje pažnje ka onima koje traže najviše.</p>
+    </div>
+
+    <div class="axes">
+      <span class="tag">Prvo — tri različite vrste opreza</span>
+      <h3>„Loše" nije jedna stvar</h3>
+      <p class="aintro">Najčešća greška je trpati sve u istu korpu „štetno". Ali igra može biti problematična na tri sasvim različita načina — i za svaki se drugačije reaguje.</p>
+      <div class="axes-grid">
+        <div class="axis"><h4><span class="dot" style="background:var(--rust)"></span>Bezbednost</h4><p>Nepoznati ljudi i ćaskanje. Najveći rizik. Reaguje se podešavanjem naloga i razgovorom.</p></div>
+        <div class="axis"><h4><span class="dot" style="background:var(--amber)"></span>Novac</h4><p>Kupovine i nasumične nagrade. Reaguje se odobravanjem kupovina.</p></div>
+        <div class="axis"><h4><span class="dot" style="background:#8A9A93"></span>Prazno vreme</h4><p>Igre bez kraja ili poplava reklama. Reaguje se limitom vremena po aplikaciji.</p></div>
+      </div>
+    </div>
+
+    <div class="legend">
+      Boja leve ivice kartice pokazuje <b>koliko pažnje</b> igra traži:
+      <div class="row">
+        <span class="item"><span class="swatch" style="background:var(--green)"></span> malo — može mirno</span>
+        <span class="item"><span class="swatch" style="background:var(--amber)"></span> umereno — podesi pre igranja</span>
+        <span class="item"><span class="swatch" style="background:var(--rust)"></span> mnogo — obavezno podesi nalog</span>
+      </div>
+      <div class="lootnote"><b>Kupovine</b> i <b>nasumične nagrade</b> označene su na dnu svake kartice — samo kao činjenica. Detaljnije o njima u delu <a href="#novac">„Novac u igrama"</a>.</div>
+    </div>
+
+    <div class="games">
+      <article class="game lvl-low"><div class="g-head"><h3>Geometry Dash</h3><span class="g-cat">Ritam-platformer · jedan igrač</span></div>
+        <p class="g-desc">Prelaziš teške nivoe u ritmu muzike — umireš mnogo puta dok ne savladaš obrazac.</p>
+        <figure class="game-media"><img class="game-icon" src="assets/geometry-dash-icon.png" alt="Geometry Dash ikonica"><img class="game-shot" src="assets/geometry-dash-shot.png" alt="Geometry Dash snimak ekrana"></figure>
+        <div class="cautions"><span class="ctag min">Praktično bez rizika</span></div>
+        <div class="cols"><div class="col good"><h4>Šta razvija</h4><ul><li>Upornost i toleranciju na neuspeh.</li><li>Preciznost, tajming i pamćenje obrazaca.</li><li>Osećaj za ritam; editor nivoa uči dizajn.</li></ul></div>
+        <div class="col watch"><h4>Na šta paziti</h4><ul><li>Ume da bude frustrirajuće do besa — deo poente.</li><li>Korisnički nivoi mogu imati poneko neprimereno ime, ali nema kontakta sa strancima.</li></ul></div></div>
+        <div class="meta"><span class="badge"><span class="k">Uzrast</span><span class="pegi">PEGI 3</span></span><span class="badge"><span class="k">Kupovine</span><span class="v no">Minimalne</span></span><span class="badge"><span class="k">Nasumične nagrade</span><span class="v no">Ne</span></span></div>
+      </article>
+
+      <article class="game lvl-low"><div class="g-head"><h3>Fall Guys</h3><span class="g-cat">Zabavna trka-prepreke · do 60 igrača</span></div>
+        <p class="g-desc">Šašavi likovi trče kroz prepreke i ispadaju rundu po rundu dok ne ostane pobednik.</p>
+        <figure class="game-media"><img class="game-icon" src="assets/fall-guys-icon.jpg" alt="Fall Guys ikonica"><img class="game-shot" src="assets/fall-guys-shot.jpg" alt="Fall Guys snimak ekrana"></figure>
+        <div class="cautions"><span class="ctag min">Blag rizik</span><span class="ctag money">Kozmetika</span></div>
+        <div class="cols"><div class="col good"><h4>Šta razvija</h4><ul><li>Koordinaciju i brze reakcije.</li><li>Sportski duh — poraz je smešan i blag.</li><li>Timske runde uče saradnju; potpuno nenasilno.</li></ul></div>
+        <div class="col watch"><h4>Na šta paziti</h4><ul><li>Kozmetička prodavnica i sezonska propusnica — pritisak da se troši, ali samo izgled.</li><li>Online, ali skoro bez ćaskanja sa strancima — velik plus.</li></ul></div></div>
+        <div class="meta"><span class="badge"><span class="k">Uzrast</span><span class="pegi">PEGI 3</span></span><span class="badge"><span class="k">Kupovine</span><span class="v mid">Da — kozmetika</span></span><span class="badge"><span class="k">Nasumične nagrade</span><span class="v no">Ne</span></span></div>
+      </article>
+
+      <article class="game lvl-med"><div class="g-head"><h3>Among Us</h3><span class="g-cat">Društvena dedukcija · više igrača</span></div>
+        <p class="g-desc">Posada obavlja zadatke, a varalica ih potajno „eliminiše" — razgovorom i glasanjem tražite varalicu.</p>
+        <figure class="game-media"><img class="game-icon" src="assets/among-us-icon.png" alt="Among Us ikonica"><img class="game-shot" src="assets/among-us-shot.png" alt="Among Us snimak ekrana"></figure>
+        <div class="cautions"><span class="ctag people">Stranci u javnim sobama</span></div>
+        <div class="cols"><div class="col good"><h4>Šta razvija</h4><ul><li>Logičko rasuđivanje, argumentaciju, čitanje ljudi.</li><li>Komunikaciju i timski rad.</li><li>Odlično u privatnoj sobi sa drugarima.</li></ul></div>
+        <div class="col watch"><h4>Na šta paziti</h4><ul><li>Javne sobe = ćaskanje sa strancima. Privatna soba to rešava.</li><li>Prevara je srž — nekoj mlađoj deci teško pada.</li><li>Blago crtano nasilje.</li></ul></div></div>
+        <div class="meta"><span class="badge"><span class="k">Uzrast</span><span class="pegi">PEGI 7</span></span><span class="badge"><span class="k">Kupovine</span><span class="v mid">Da — kozmetika / reklame</span></span><span class="badge"><span class="k">Nasumične nagrade</span><span class="v no">Ne</span></span></div>
+      </article>
+
+      <article class="game lvl-med"><div class="g-head"><h3>Minecraft</h3><span class="g-cat">Otvoreni svet · gradnja i preživljavanje</span></div>
+        <p class="g-desc">Školski primer razvojno vredne igre — gradiš, istražuješ i praviš šta zamisliš, sam ili sa drugima.</p>
+        <figure class="game-media"><img class="game-icon" src="assets/minecraft-icon.png" alt="Minecraft ikonica"><img class="game-shot" src="assets/minecraft-shot.png" alt="Minecraft snimak ekrana"></figure>
+        <div class="cautions"><span class="ctag people">Stranci na javnim serverima</span><span class="ctag time">Usisava vreme</span></div>
+        <div class="cols"><div class="col good"><h4>Šta razvija</h4><ul><li>Kreativnost, prostorno razmišljanje, planiranje.</li><li>„Redstone" je uvod u logiku i razmišljanje ka programiranju.</li><li>Nema nametnutu petlju zadržavanja.</li></ul></div>
+        <div class="col watch"><h4>Na šta paziti</h4><ul><li>Javni serveri = stranci i ćaskanje. Lokalno/sa poznatima je vrlo bezbedno.</li><li>Vrlo zaokupljajuća — lako se izgubi pojam o vremenu.</li><li>Za osetljive: Creative/Peaceful režim.</li></ul></div></div>
+        <div class="meta"><span class="badge"><span class="k">Uzrast</span><span class="pegi">PEGI 7</span></span><span class="badge"><span class="k">Kupovine</span><span class="v mid">Da — kozmetika</span></span><span class="badge"><span class="k">Nasumične nagrade</span><span class="v no">Ne</span></span></div>
+      </article>
+
+      <article class="game lvl-med"><div class="g-head"><h3>Stumble Guys</h3><span class="g-cat">Mobilna knockout trka · do 32 igrača</span></div>
+        <p class="g-desc">Mobilni rođak Fall Guys-a: brze, haotične trke. Zabavno, ali komercijalno agresivno.</p>
+        <figure class="game-media"><img class="game-icon" src="assets/stumble-guys-icon.png" alt="Stumble Guys ikonica"><img class="game-shot" src="assets/stumble-guys-shot.png" alt="Stumble Guys snimak ekrana"></figure>
+        <div class="cautions"><span class="ctag ads">Mnogo reklama</span><span class="ctag money">Agresivna monetizacija</span></div>
+        <div class="cols"><div class="col good"><h4>Šta razvija</h4><ul><li>Brze reflekse i reakcije.</li><li>Kratke runde; radi na slabijim telefonima.</li><li>Nenasilno.</li></ul></div>
+        <div class="col watch"><h4>Na šta paziti</h4><ul><li>Vrlo mnogo reklama u besplatnoj verziji.</li><li>Gacha vrteške — nasumični skinovi za tokene/gledanje reklama.</li><li>Jak pritisak na potrošnju za dečju igru.</li></ul></div></div>
+        <div class="meta"><span class="badge"><span class="k">Uzrast</span><span class="pegi">PEGI 7</span></span><span class="badge"><span class="k">Kupovine</span><span class="v yes">Da — izražene</span></span><span class="badge"><span class="k">Nasumične nagrade</span><span class="v yes">Da — gacha</span></span></div>
+      </article>
+
+      <article class="game lvl-med"><div class="g-head"><h3>Fortnite</h3><span class="g-cat">Battle royale sa građenjem · i platforma</span></div>
+        <p class="g-desc">Sto igrača, poslednji preživeli pobeđuje; crtano, bez krvi. Uzima mnogo para, ali ne na kockarski način.</p>
+        <figure class="game-media"><img class="game-icon" src="assets/fortnite-icon.png" alt="Fortnite ikonica"><img class="game-shot" src="assets/fortnite-shot.png" alt="Fortnite snimak ekrana"></figure>
+        <div class="cautions"><span class="ctag people">Glasovno ćaskanje sa strancima</span><span class="ctag money">Pritisak da se troši</span></div>
+        <div class="cols"><div class="col good"><h4>Šta razvija</h4><ul><li>Nišanjenje, prostornu svest, odluke pod pritiskom.</li><li>Mehanika građenja je kognitivno zahtevna.</li><li>Timski rad; Creative uči dizajn i kod. Kupuje se samo izgled.</li></ul></div>
+        <div class="col watch"><h4>Na šta paziti</h4><ul><li>Ćaskanje sa strancima — ograniči na „samo prijatelji".</li><li>Jak pritisak da se troši (rotirajuća prodavnica, propusnica).</li><li>Od 2026. kreatori prodaju predmete u mapama — neki prave kockarske mini-igre.</li></ul></div></div>
+        <div class="meta"><span class="badge"><span class="k">Uzrast</span><span class="pegi">PEGI 12</span></span><span class="badge"><span class="k">Kupovine</span><span class="v mid">Da — kozmetika</span></span><span class="badge"><span class="k">Nasumične nagrade</span><span class="v no">Ne (u osnovnoj igri)</span></span></div>
+      </article>
+
+      <article class="game lvl-med"><div class="g-head"><h3>Brawl Stars</h3><span class="g-cat">Arenski borac 3-na-3 · PvP</span></div>
+        <p class="g-desc">Brzi mečevi od par minuta, dobro dizajnirani — ali sa nasumičnim nagradama i napretkom koji košta.</p>
+        <figure class="game-media"><img class="game-icon" src="assets/brawl-stars-icon.png" alt="Brawl Stars ikonica"><img class="game-shot" src="assets/brawl-stars-shot.png" alt="Brawl Stars snimak ekrana"></figure>
+        <div class="cautions"><span class="ctag people">Stranci i ćaskanje</span><span class="ctag money">Napredak košta</span><span class="ctag comp">Frustracija</span></div>
+        <div class="cols"><div class="col good"><h4>Šta razvija</h4><ul><li>Timski rad, pozicioniranje, brzu taktiku.</li><li>Uloge likova i saradnju; kratki mečevi.</li><li>Igra sa drugarima kroz klubove.</li></ul></div>
+        <div class="col watch"><h4>Na šta paziti</h4><ul><li>PvP protiv nepoznatih; klubovi imaju ćaskanje.</li><li>Nadogradnja likova košta — razlike u snazi.</li><li>Loš niz mečeva donosi frustraciju.</li></ul></div></div>
+        <div class="meta"><span class="badge"><span class="k">Uzrast</span><span class="pegi">PEGI 7</span></span><span class="badge"><span class="k">Kupovine</span><span class="v yes">Da — utiču na napredak</span></span><span class="badge"><span class="k">Nasumične nagrade</span><span class="v yes">Da — Starr / Chaos Drops</span></span></div>
+      </article>
+
+      <article class="game lvl-med"><div class="g-head"><h3>Clash Royale</h3><span class="g-cat">Kartična strategija u realnom vremenu · PvP</span></div>
+        <p class="g-desc">Odlična za strateško razmišljanje — ali od svih na spisku najagresivnija po pitanju trošenja.</p>
+        <figure class="game-media"><img class="game-icon" src="assets/clash-royale-icon.png" alt="Clash Royale ikonica"><img class="game-shot" src="assets/clash-royale-shot.png" alt="Clash Royale snimak ekrana"></figure>
+        <div class="cautions"><span class="ctag money">Najviše troši</span><span class="ctag comp">Rang-lista, frustracija</span></div>
+        <div class="cols"><div class="col good"><h4>Šta razvija</h4><ul><li>Strateško razmišljanje i planiranje.</li><li>Upravljanje eliksirom i pravljenje špila.</li><li>Prilagođavanje, tajming, strpljenje. Ćaskanje ograničeno na gotove poruke.</li></ul></div>
+        <div class="col watch"><h4>Na šta paziti</h4><ul><li>Nadograđivanje karata je „plati da napreduješ".</li><li>Nasumični sanduci; „Evolutions" doživljen kao pay-to-win.</li><li>Rang-lista protiv stranaca donosi frustraciju.</li></ul></div></div>
+        <div class="meta"><span class="badge"><span class="k">Uzrast</span><span class="pegi">PEGI 7</span></span><span class="badge"><span class="k">Kupovine</span><span class="v yes">Da — snažno utiču</span></span><span class="badge"><span class="k">Nasumične nagrade</span><span class="v yes">Da — sanduci</span></span></div>
+      </article>
+
+      <article class="game lvl-high"><div class="g-head"><h3>Roblox</h3><span class="g-cat">Platforma sa milionima igara koje prave korisnici</span></div>
+        <p class="g-desc">Najveći kreativni potencijal na spisku i najviše rizika — traži da se nalog obavezno podesi.</p>
+        <figure class="game-media"><img class="game-icon" src="assets/roblox-icon.png" alt="Roblox ikonica"><img class="game-shot" src="assets/roblox-shot.png" alt="Roblox snimak ekrana"></figure>
+        <div class="cautions"><span class="ctag people">Kontakt sa nepoznatim odraslima</span><span class="ctag money">Robux — laka potrošnja</span></div>
+        <div class="cols"><div class="col good"><h4>Šta razvija</h4><ul><li>Dete može i da <strong>pravi i programira</strong> igre (Lua).</li><li>Ogromna raznovrsnost sadržaja.</li><li>Druženje sa drugarima; neke igre su edukativne.</li></ul></div>
+        <div class="col watch"><h4>Na šta paziti</h4><ul><li>Otvorena platforma + ćaskanje → neprimeren sadržaj i kontakt sa nepoznatima.</li><li>Robux omogućava prekomernu potrošnju; neke igre imaju kockarske mehanike.</li><li>Uz dečji nalog (Kids/Select) i limite — mnogo bezbednije.</li></ul></div></div>
+        <div class="meta"><span class="badge"><span class="k">Uzrast</span><span class="pegi">PEGI · uz nadzor</span></span><span class="badge"><span class="k">Kupovine</span><span class="v yes">Da — Robux</span></span><span class="badge"><span class="k">Nasumične nagrade</span><span class="v mid">Ponegde</span></span></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 4. NOVAC ============ -->
+  <section id="novac">
+    <div class="chapter">
+      <div class="cn">Deo 04</div>
+      <h2>Novac u igrama: kako zarađuju na deci</h2>
+      <p class="intro">Skoro svaka besplatna igra mora nekako da zaradi. Načina ima tri, i jedan roditelji gotovo uvek previde. Dobra vest: nekoliko dosadnih pravila skida najveći deo rizika.</p>
+    </div>
+
+    <div class="rules">
+      <span class="tag">Pre svega ostalog</span>
+      <h3>Tri pravila koja se ne pregovaraju</h3>
+      <p class="rintro">Ako ne uradiš ništa drugo, uradi ovo troje. Zajedno neutrališu skoro svu nekontrolisanu potrošnju.</p>
+      <ol>
+        <li><h4>Kartica nije detetu dostupna <span class="en">(access to payment methods)</span></h4><p>Podaci o kreditnoj kartici se <b>ne čuvaju na dečjem telefonu</b> i ne dele se sa detetom. Način plaćanja drži roditelj — osnovno pravilo pristupa kartici i kupovini preko interneta.</p></li>
+        <li><h4>Šifra za svaku kupovinu — uvek <span class="en">(require authentication for all purchases)</span></h4><p>U Google Play prodavnici postavi da se lozinka traži za <b>baš svaku</b> kupovinu. Bez toga dete može samo da kupuje stvari preko interneta.</p></li>
+        <li><h4>Unesi tačne godine deteta <span class="en">(correct age)</span></h4><p>Sve prodavnice i igre imaju <b>stroga ograničenja</b> pristupa kupovinama i šopovima — ali se pale <b>samo ako je unet stvarni uzrast</b>. Ako se dete lažno predstavi kao odraslo, sva zaštita nestane odjednom.</p></li>
+      </ol>
+    </div>
+
+    <div class="sub-head"><h3>Tri oblika monetizacije</h3><p>Idu od najlakšeg za kontrolu ka najpodmuklijem.</p></div>
+
+    <div class="mtype">
+      <div class="num">01</div>
+      <h3>Kupovine unutar aplikacije</h3>
+      <p class="msub"><span class="en">In-App Purchases (IAP) · mikrotransakcije</span></p>
+      <p>Dete direktno kupuje nešto: izgled lika <span class="en">(skin)</span>, premijum valutu <span class="en">(V-Bucks, Robux, gemovi)</span>, ili prednost <span class="en">(pay-to-win)</span>. Cena je vidljiva, ishod poznat.</p>
+      <div class="keypt"><b>Najlakše se kontroliše.</b> Pravila 1 i 2 ga praktično reše: kad svaka kupovina traži šifru, dete ne može samo ništa da kupi.</div>
+    </div>
+
+    <div class="mtype ads">
+      <div class="num">02</div>
+      <span class="rflag">Ovo roditelji najčešće previde</span>
+      <h3>Monetizacija kroz reklame</h3>
+      <p class="msub"><span class="en">Ad-based monetization · rewarded ads — nagrađene reklame</span></p>
+      <p class="lead">Ovo nije bezazleno. Od sva tri oblika, ovaj je najpodmukliji — baš zato što je nevidljiv i ne stoji ni na jednom računu.</p>
+      <ul>
+        <li><b>„Besplatno" nije besplatno.</b> <span>Ako ne plaćaš proizvod — proizvod je tvoje dete. Prodaje se njegova pažnja, vreme i podaci.</span></li>
+        <li><b>Cilj igre je suprotan dobru deteta.</b> <span>Igra zarađuje što više prekida i što duže gledanja, pa je namerno pravljena da prekida, mami i vraća. Dizajn radi protiv deteta.</span></li>
+        <li><b>„Nagrađene reklame" dresiraju dete.</b> <span>Pogledaj reklamu → dobij nagradu. Mali uslovni krug koji usađuje: reklama = nagrada.</span></li>
+        <li><b>Reklame su levak ka daljem trošenju.</b> <span>Reklamiraju druge, agresivnije igre — pa i aplikacije sa kockarskim mehanikama — koje zaobilaze uzrasnu oznaku same igre.</span></li>
+        <li><b>Skupljaju se podaci o detetu.</b> <span>Profilisanje maloletnika radi ciljanja reklama.</span></li>
+        <li><b>Sadržaj reklama niko ne bira umesto tebe.</b> <span>Može biti neprimeren, uznemirujuć ili prevara.</span></li>
+      </ul>
+      <div class="do"><b>Šta da radiš:</b> plaćena verzija bez reklama <span class="en">(ad-free)</span> je često najjeftinija zaštita koju ćeš kupiti — jednom platiš par evra i ukloniš ceo ovaj mehanizam.</div>
+    </div>
+
+    <div class="mtype">
+      <div class="num">03</div>
+      <h3>Nasumične nagrade</h3>
+      <p class="msub"><span class="en">Random rewards · loot box · gacha · sanduci, dropovi</span></p>
+      <p>Platiš — pravim novcem ili valutom iz igre — i dobiješ <b>nasumičan</b> sadržaj. Ne znaš unapred šta ćeš izvući.</p>
+      <div class="twoside">
+        <div class="side kinder"><h4>Zašto privlače decu</h4><p>Isto ono iznenađenje kao <b>Kinder jaje</b> ili <b>kesica sa sličicama</b>. Deca oduvek vole iznenađenje i skupljanje — to nije poremećaj. Zato loot box detetu deluje primamljivo i poznato.</p></div>
+        <div class="side bet"><h4>Druga strana</h4><p>Ali i Kinder jaje, i sličice, i loot box mogu da <b>liče na kocku</b>. Struktura je ista: platiš pravi novac za nasumičan ishod nejednake vrednosti, uz jurnjavu i „umalo".</p></div>
+      </div>
+      <p class="verdict">Jedina stvar koja ih drži van <em>prave</em> kocke: <b>nema isplate</b> — uvek dobiješ nešto i ne možeš da unovčiš dobitak. Zato nije bauk. Ali jeste razlog za onaj jedan potez: šifra i odobravanje. Pitanje nije „je li kocka" (sve je pomalo) — nego <b>koliko je agresivno i ima li ventil</b>.</p>
+    </div>
+
+    <div class="recap">
+      <h3>Sve tri se drže pod kontrolom sa tri stvari</h3>
+      <ul>
+        <li><b>Tačne godine deteta</b> <span>— pale ugrađena ograničenja prodavnica i igara.</span></li>
+        <li><b>Šifra za svaku kupovinu</b> <span>— ništa se ne plaća bez tebe.</span></li>
+        <li><b>Odobravanje kupovina u Family Link-u</b> <span>— svako preuzimanje i kupovina traži tvoje „da" (deo „Telefon").</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <h3>To je to — najveći deo priče</h3>
+    <p>Podesi telefon jednom, nauči da čitaš PEGI, znaj šta koja igra radi i drži novac pod šifrom — i dete može mirno da se igra. Sve se menja i smišljaju se novi trikovi, ali pitanja ostaju ista: <strong>je li primereno, šta razvija, i plaća li se ili se izvlači nasumično.</strong></p>
+    <div class="share"><b>Podeli sa drugim roditeljem.</b> Ovaj vodič najviše vredi kad stigne do onih koji ne znaju da ova podešavanja postoje — a to su najčešće roditelji iz tvoje Viber ili Facebook grupe, ne oni koji ovo guglaju.</div>
+  </footer>
+
+</main>
+
+<button class="totop" id="totop" aria-label="Nazad na vrh">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 19V5M5 12l7-7 7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script>
+  (function(){
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // step reveal
+    var steps = document.querySelectorAll('.step');
+    if(!('IntersectionObserver' in window) || reduce){
+      steps.forEach(function(s){s.classList.add('in');});
+    } else {
+      var io = new IntersectionObserver(function(es){
+        es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+      },{threshold:0.18, rootMargin:'0px 0px -40px 0px'});
+      steps.forEach(function(s){ io.observe(s); });
+    }
+
+    // scroll-spy nav
+    var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
+    var map = {};
+    links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+    var secs = ['telefon','pegi','igre','novac'].map(function(id){return document.getElementById(id);});
+    if('IntersectionObserver' in window){
+      var spy = new IntersectionObserver(function(es){
+        es.forEach(function(e){
+          if(e.isIntersecting){
+            links.forEach(function(l){l.classList.remove('active');});
+            if(map[e.target.id]) map[e.target.id].classList.add('active');
+          }
+        });
+      },{rootMargin:'-45% 0px -50% 0px'});
+      secs.forEach(function(s){ if(s) spy.observe(s); });
+    }
+
+    // back to top
+    var btn = document.getElementById('totop');
+    window.addEventListener('scroll', function(){
+      if(window.scrollY > 700){ btn.classList.add('show'); } else { btn.classList.remove('show'); }
+    }, {passive:true});
+    btn.addEventListener('click', function(){ window.scrollTo({top:0, behavior: reduce ? 'auto':'smooth'}); });
+  })();
+</script>
+
+</body>
+</html>
