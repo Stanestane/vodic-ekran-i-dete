@@ -6,8 +6,7 @@
   },
   {
     "asset": "geometry-dash-shot.png",
-    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.robtopx.geometryjump",
-    "source": "Google Play"
+    "source": "Boss-provided local screenshot"
   },
   {
     "asset": "among-us-icon.png",
@@ -16,8 +15,7 @@
   },
   {
     "asset": "among-us-shot.png",
-    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.innersloth.spacemafia",
-    "source": "Google Play"
+    "source": "Boss-provided local screenshot"
   },
   {
     "asset": "minecraft-icon.png",
@@ -26,8 +24,7 @@
   },
   {
     "asset": "minecraft-shot.png",
-    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.mojang.minecraftpe",
-    "source": "Google Play"
+    "source": "Boss-provided local screenshot"
   },
   {
     "asset": "stumble-guys-icon.png",
@@ -36,8 +33,7 @@
   },
   {
     "asset": "stumble-guys-shot.png",
-    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.kitkagames.fallbuddies",
-    "source": "Google Play"
+    "source": "Boss-provided local screenshot"
   },
   {
     "asset": "brawl-stars-icon.png",
@@ -46,8 +42,7 @@
   },
   {
     "asset": "brawl-stars-shot.png",
-    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.supercell.brawlstars",
-    "source": "Google Play"
+    "source": "Boss-provided local screenshot"
   },
   {
     "asset": "clash-royale-icon.png",
@@ -66,8 +61,7 @@
   },
   {
     "asset": "roblox-shot.png",
-    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.roblox.client",
-    "source": "Google Play"
+    "source": "Boss-provided local screenshot"
   },
   {
     "asset": "fortnite-icon.png",
@@ -76,8 +70,7 @@
   },
   {
     "asset": "fortnite-shot.png",
-    "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.epicgames.fortnite",
-    "source": "Google Play"
+    "source": "Boss-provided local screenshot"
   },
   {
     "asset": "fall-guys-icon.jpg",
@@ -173,5 +166,21 @@
     "asset": "family-link-shot-3.png",
     "source": "Google Play",
     "page": "https://play.google.com/store/apps/details?hl=en_US&id=com.google.android.apps.kids.familylink"
+  },
+  {
+    "asset": "family-link-step-1.png",
+    "source": "Boss-provided local composed screenshot"
+  },
+  {
+    "asset": "family-link-step-4.png",
+    "source": "Boss-provided local composed screenshot"
+  },
+  {
+    "asset": "family-link-step-5.png",
+    "source": "Boss-provided local composed screenshot"
+  },
+  {
+    "asset": "family-link-step-6.png",
+    "source": "Boss-provided local composed screenshot"
   }
 ]

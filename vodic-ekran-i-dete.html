@@ -111,6 +111,9 @@
   .crumb{display:inline-flex;align-items:center;gap:7px;flex-wrap:wrap;font-weight:600;color:var(--ink)}
   .crumb i{font-style:normal;color:var(--line-strong)}
   .crumb b{font-family:"Bricolage Grotesque",sans-serif}
+  .step-shot{margin:0 0 18px;padding:16px;border:1px solid var(--line);border-radius:14px;background:rgba(22,53,47,.035);box-shadow:0 10px 28px rgba(22,53,47,.08)}
+  .step-shot img{display:block;width:100%;height:auto;border-radius:10px;border:1px solid var(--line);background:#E7F0FF}
+  .step-shot.compact img{max-width:720px;margin:0 auto}
   .mini{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:9px}
   .mini li{position:relative;padding-left:24px;font-size:.98rem}
   .mini li::before{content:"";position:absolute;left:2px;top:.6em;width:8px;height:8px;background:var(--amber);border-radius:2px;transform:rotate(45deg)}
@@ -437,8 +440,9 @@
       </div>
     </div>
 
-    <div class="path">
+      <div class="path">
       <div class="step"><div class="step-num">1</div><div class="card">
+        <div class="step-shot compact"><img src="assets/family-link-step-1.png" alt="Family Link podešavanje, korak 1" loading="lazy"></div>
         <h4>Postavite Family Link na telefon roditelja</h4>
         <p class="goal">Roditelj dobija pregled podešavanja na svom telefonu.</p>
         <p>U <strong>Play prodavnici</strong> potražite <strong>„Family Link"</strong> i instalirajte aplikaciju. Prijavite se Google nalogom roditelja, izaberite opciju da ste <strong>roditelj</strong> i napravite <strong>porodičnu grupu</strong>.</p>
@@ -455,6 +459,7 @@
         <p>Na <strong>dečjem</strong> telefonu prijavite dete njegovim nalogom (<strong>Podešavanja → Nalozi</strong>, ili pri prvom uključivanju). Potvrdite nadzor sa telefona roditelja. Preporučuje se da roditelj bude uz dete dok se uređaj povezuje.</p>
       </div></div>
       <div class="step"><div class="step-num">4</div><div class="card">
+        <div class="step-shot"><img src="assets/family-link-step-4.png" alt="Family Link podešavanje vremena, korak 4" loading="lazy"></div>
         <h4>Podesite vreme</h4>
         <p class="goal">Telefon se koristi u dogovorenom vremenu i automatski se zaključava uveče.</p>
         <div class="where"><span class="crumb">Izaberite dete <i>›</i> <b>Screen time</b> (Vreme ispred ekrana)</span></div>
@@ -467,6 +472,7 @@
         <p class="note">Preporuka: počnite <b style="color:var(--ink)">realno</b>, ne prestrogo — pravila koja prate ritam porodice lakše se poštuju.</p>
       </div></div>
       <div class="step"><div class="step-num">5</div><div class="card">
+        <div class="step-shot"><img src="assets/family-link-step-5.png" alt="Family Link ograničavanje aplikacija, korak 5" loading="lazy"></div>
         <span class="flag">Važno podešavanje</span>
         <h4>Ograničite svaku aplikaciju posebno</h4>
         <p class="goal">Nije važno samo ukupno vreme, već i na šta se to vreme odnosi.</p>
@@ -479,6 +485,7 @@
         <p class="note"><b>Važno:</b> sistemske aplikacije (Telefon, Poruke, Google) ne mogu da se ograniče — i to je u redu.</p>
       </div></div>
       <div class="step"><div class="step-num">6</div><div class="card">
+        <div class="step-shot"><img src="assets/family-link-step-6.png" alt="Family Link odobravanje instalacija i kupovina, korak 6" loading="lazy"></div>
         <span class="flag">Ključno podešavanje</span>
         <h4>Odobravanje instalacija i kupovina</h4>
         <p class="goal">Ništa se ne instalira niti plaća bez odobrenja roditelja.</p>
