@@ -38,14 +38,15 @@
   .nav-links a.active{color:var(--ink);background:rgba(224,152,42,.16)}
 
   /* ---------- HERO ---------- */
-  .hero{padding:64px 0 28px}
+  .hero{padding:64px 0 28px;text-align: justify}
   .eyebrow{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-deep);margin-bottom:18px}
   .hero h1{font-size:clamp(2.5rem,7vw,4.4rem);font-weight:800;max-width:14ch;line-height:1}
   .hero h1 em{font-style:normal;color:var(--amber-deep)}
   .hero .lede{font-size:clamp(1.08rem,2.4vw,1.32rem);color:var(--ink-soft);max-width:58ch;margin-top:24px}
   .hero-art{margin:34px 0 0}
-  .reassure{font-size:1.05rem;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:12px;padding:16px 20px;max-width:62ch;margin-top:26px}
+  .reassure{font-size:1.05rem;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--green);border-radius:12px;padding:16px 20px;margin-top:26px}
   .reassure strong{color:var(--green)}
+  .hero img{max-width:100%;margin:auto;border-radius:10px;border:1px solid var(--line);background:#E7F0FF}
 
   /* ---------- TOC ---------- */
   .toc{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:36px 0 0}
@@ -312,6 +313,32 @@
     .step{opacity:1;transform:none;transition:none}
     .toc a{transition:none}
   }
+  /* ---- dopune v2 ---- */
+  .intro-risk{margin:30px 0 4px}
+  .intro-risk .ir-title{font-family:"Bricolage Grotesque","Onest",sans-serif;font-weight:800;font-size:1.5rem;letter-spacing:-.01em;margin:0 0 6px}
+  .intro-risk .ir-lede{color:var(--ink-soft);margin:0 0 14px}
+  .defbox{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--ink);border-radius:12px;padding:15px 20px;margin:0 0 12px}
+  .defbox h4{font-family:"Bricolage Grotesque","Onest",sans-serif;font-size:1.02rem;margin:0 0 5px}
+  .defbox p{margin:0;color:var(--ink-soft);font-size:.97rem}
+  .ir-frame{background:rgba(61,124,88,.09);border-left:4px solid var(--green);border-radius:12px;padding:16px 20px;margin:14px 0 0;font-size:1.02rem}
+  .ir-frame em{font-style:italic;color:var(--ink)}
+  .evi{background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--green);border-radius:var(--r);padding:22px 26px;margin-top:20px;box-shadow:var(--shadow)}
+  .evi h3{font-family:"Bricolage Grotesque","Onest",sans-serif;font-size:1.2rem;margin:0 0 10px}
+  .evi>p{max-width:64ch;margin:0 0 4px}
+  .evi ul{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:9px}
+  .evi li{position:relative;padding-left:22px;font-size:.97rem;color:var(--ink-soft)}
+  .evi li::before{content:"";position:absolute;left:2px;top:.55em;width:8px;height:8px;border-radius:50%;background:var(--green)}
+  .evi li b{color:var(--ink)}
+  .iphone{background:var(--surface);border:1px dashed var(--line-strong);border-radius:14px;padding:18px 22px;margin-top:22px}
+  .iphone h4{font-family:"Bricolage Grotesque","Onest",sans-serif;font-size:1.08rem;margin:0 0 6px}
+  .iphone p{margin:0;color:var(--ink-soft);font-size:.96rem}
+  .refs ul{margin:0;padding:0;list-style:none;display:grid;gap:11px}
+  .refs li{font-size:.78rem;line-height:1.5;color:#9AA39E;padding-left:26px;text-indent:-26px}
+  .refs li i{font-style:italic}
+  .refs a{color:#9AA39E;text-decoration:underline}
+  .refs .note{font-size:.76rem;line-height:1.5;color:#9AA39E;margin-top:16px}
+  .refs-head{margin:78px 0 14px;border-top:2px solid var(--line-strong);padding-top:26px}
+  .refs-title{font-family:"Bricolage Grotesque","Onest",sans-serif;font-size:1.15rem;font-weight:700;margin:0;color:var(--ink-soft)}
 </style>
 </head>
 <body>
@@ -325,6 +352,7 @@
       <a href="#novac">Novac</a>
       <a href="#pegi">PEGI</a>
       <a href="#igre">Igre</a>
+      <a href="#reference">Reference</a>
     </nav>
   </div>
 </header>
@@ -334,7 +362,8 @@
   <!-- HERO -->
   <section class="hero">
     <div class="eyebrow">Vodič za roditelje</div>
-    <h1>Ekran i dete: <em>šta je važno</em>.</h1>
+    <img src="assets/dete_telefon3.jpg" alt="Majka dete i telefon">
+    <h1>Ekran i dete</h1>
     <p class="lede">Jedan sat pravljenja nečega u Minecraft-u i jedan sat beskonačnog skrolovanja nisu ista stvar. Većina saveta roditeljima govori samo o količini vremena. Ovaj vodič se bavi onim što je važno za zdrav razvoj: kvalitetom sadržaja, bezbednošću deteta na mreži i jasnim porodičnim pravilima za korišćenje ekrana.</p>
 
     <div class="hero-art" aria-hidden="true">
@@ -371,12 +400,27 @@
 
     <p class="reassure">Važno je naglasiti: cilj nije oduzimanje telefona niti nadzor koji narušava poverenje. Cilj je da roditelji postave jasna pravila o tome šta dete koristi, koliko dugo i pod kojim uslovima. Nekoliko osnovnih podešavanja značajno smanjuje najčešće rizike.</p>
 
+    <!-- RIZIK / MOGUĆNOST -->
+    <div class="intro-risk">
+      <h2 class="ir-title">O čemu je reč: rizik i mogućnost</h2>
+      <p class="ir-lede">Stručna literatura opisuje dva obrasca na koje ovaj vodič cilja.</p>
+      <div class="defbox">
+        <h4>Problematično korišćenje pametnih telefona (PSU)</h4>
+        <p>Obrazac prekomerne upotrebe ovih uređaja nad kojom je smanjena kontrola, a koja direktno ometa svakodnevno funkcionisanje.</p>
+      </div>
+      <div class="defbox">
+        <h4>Poremećaj igranja video-igara</h4>
+        <p>Trajni ili ponavljajući obrazac igranja koji se odlikuje gubitkom kontrole, davanjem prioriteta igranju u odnosu na druga interesovanja i svakodnevne aktivnosti, te nastavljanjem igranja uprkos očiglednim negativnim posledicama.</p>
+      </div>
+      <p class="ir-frame">Rizik je stvaran, ali nije jedina strana priče. Kada je korišćenje nadgledano, a dete postepeno naučeno kako da koristi telefon i igre, ekran može biti podrška razvoju, a ne prepreka. Cilj ovog vodiča nije zabrana, već pomoć roditeljima da kod deteta izgrade <em>adaptivno korišćenje</em> i <em>adaptivno igranje</em> — bezbedno i osmišljeno korišćenje ekrana. Novija istraživanja idu u prilog tome (Jalanko i sar., 2026): za razvoj nije presudno koliko vremena dete provede pred ekranom, već kakva je aktivnost i da li podstiče mišljenje, rešavanje problema i stvaralaštvo.</p>
+    </div>
+
     <!-- TOC -->
     <div class="toc">
       <a href="#telefon"><span class="n">01</span><h3>Telefon pod kontrolom</h3><p>Napravite dečji nalog, ograničite vreme i podesite pravila za svaku aplikaciju posebno.</p><span class="go">Otvori →</span></a>
       <a href="#novac"><span class="n">02</span><h3>Novac u igrama</h3><p>Kupovine, reklame i nasumične nagrade — i kako ih držati pod kontrolom.</p><span class="go">Otvori →</span></a>
       <a href="#pegi"><span class="n">03</span><h3>PEGI oznake</h3><p>Šta uzrasne oznake znače — a šta ne govore o igri.</p><span class="go">Otvori →</span></a>
-      <a href="#igre"><span class="n">04</span><h3>Popularne igre</h3><p>Devet naslova: koje veštine dete razvija kroz igru i na šta roditelji treba da obrate pažnju.</p><span class="go">Otvori →</span></a>
+      <a href="#igre"><span class="n">04</span><h3>Popularne igre</h3><p>Devet naslova: šta igra angažuje i na šta roditelji treba da obrate pažnju.</p><span class="go">Otvori →</span></a>
     </div>
 
     <!-- TONIGHT -->
@@ -513,6 +557,11 @@
         <li><strong>Deca mogu pronaći načine da zaobiđu ograničenja.</strong><span>Na primer, Samsung „Bezbedni folder" može sakriti aplikacije — zaključajte ga PIN-om roditelja. Mogućnosti za zaobilaženje preko „Pristupačnosti" ograničite u Controls.</span></li>
         <li><strong>Nadzor prestaje kada dete odraste.</strong><span>Kada dete u Srbiji pređe Google granicu od 15 godina za samostalno upravljanje nalogom, nadzor se može promeniti ili prekinuti kroz Family Link. Do tada je važno izgraditi naviku, dogovor i poverenje.</span></li>
       </ul>
+    </div>
+
+    <div class="iphone">
+      <h4>Ako dete koristi iPhone</h4>
+      <p>Family Link ne upravlja dečjim iPhone-om na isti način. Za dečji iPhone koristi se Apple-ov sistem: „Screen Time" (Vreme ispred ekrana) uz „Family Sharing" (Porodično deljenje), u Podešavanja → Screen Time. Načela su ista (vremenski limiti, ograničenja po aplikaciji, odobravanje kupovina), ali se opcije drugačije zovu i nalaze na drugom mestu. Uputstva u ovom delu odnose se na dečji Android telefon.</p>
     </div>
   </section>
 
@@ -652,8 +701,8 @@
   <section id="igre">
     <div class="chapter">
       <div class="cn">Deo 04</div>
-      <h2>Popularne igre: šta razvijaju, na šta obratiti pažnju</h2>
-      <p class="intro">Pregled devet popularnih naslova. Na početku su igre za koje roditelji najčešće traže smernice, a za svaku su navedene razvojne mogućnosti i rizici na koje treba obratiti pažnju.</p>
+      <h2>Popularne igre: šta angažuju, na šta obratiti pažnju</h2>
+      <p class="intro">Pregled devet popularnih naslova. Za svaku je navedeno šta igra angažuje — koje sposobnosti i sadržaje uključuje — i rizici na koje treba obratiti pažnju. Namerno se ne navodi da igra „razvija" određenu sposobnost, jer bi to prevazišlo postojeće dokaze; opisuje se ono što igra od igrača traži.</p>
     </div>
 
     <div class="axes">
@@ -677,12 +726,23 @@
       <div class="lootnote"><b>Kupovine</b> i <b>nasumične nagrade</b> označene su na dnu svake kartice — samo kao činjenica. Detaljnije o njima u delu <a href="#novac">„Novac u igrama"</a>.</div>
     </div>
 
+    <div class="evi">
+      <h3>Šta nauka kaže</h3>
+      <p>Dokazi o uticaju igara na mozak i kogniciju još uvek su ograničeni, ali oprezno pozitivni. Nekoliko nalaza je dovoljno jasno:</p>
+      <ul>
+        <li>Nisu sve igre iste — različite igre angažuju različite sposobnosti, slično kao što različite sportske discipline vežbaju različite mišiće (Parong i Green, 2023).</li>
+        <li>Zbog toga se u nastavku ne navodi da igra „razvija" određenu sposobnost, već <b>šta igra angažuje</b>. Šta će dete zaista poneti zavisi od uzrasta, načina i količine igranja.</li>
+        <li>Duge, neprekidne sesije ne donose korist; raspoređeno i nadgledano igranje je povoljnije (Parong i Green, 2023; Jalanko i sar., 2026).</li>
+        <li>Korist i rizik idu zajedno: rizik od problematičnog korišćenja i poremećaja igranja je stvaran (videti početak vodiča), a razlika je u tome kako se igra koristi.</li>
+      </ul>
+    </div>
+
     <div class="games">
       <article class="game lvl-med"><div class="g-head"><h3>Minecraft</h3><span class="g-cat">Otvoreni svet · gradnja i preživljavanje</span></div>
         <p class="g-desc">Primer razvojno vredne igre u kojoj dete gradi, istražuje i stvara sopstvene strukture, samostalno ili sa drugima.</p>
         <figure class="game-media"><img class="game-icon" src="assets/minecraft-icon.png" alt="Minecraft ikonica"><img class="game-shot" src="assets/minecraft-shot.png" alt="Minecraft snimak ekrana"></figure>
         <div class="cautions"><span class="ctag people">Stranci na javnim serverima</span><span class="ctag time">Visok rizik od produženog korišćenja</span></div>
-        <div class="cols"><div class="col good"><h4>Šta razvija</h4><ul><li>Kreativnost, prostorno razmišljanje, planiranje.</li><li>„Redstone" je uvod u logiku i razmišljanje ka programiranju.</li><li>Nema nametnutu petlju zadržavanja.</li></ul></div>
+        <div class="cols"><div class="col good"><h4>Šta igra angažuje</h4><ul><li>Slobodnu gradnju i prostorno snalaženje.</li><li>Planiranje i upravljanje resursima; „redstone" uvodi jednostavnu logiku (uzrok–posledica).</li><li>Otvoren cilj — dete bira šta gradi; bez nametnute beskonačne petlje.</li></ul></div>
         <div class="col watch"><h4>Na šta obratiti pažnju</h4><ul><li>Javni serveri uključuju strance i ćaskanje. Lokalno igranje ili igranje sa poznatima je znatno bezbednije.</li><li>Igra je veoma zaokupljajuća, pa dete lako može izgubiti pojam o vremenu.</li><li>Za osetljivu decu preporučuju se Creative ili Peaceful režim.</li></ul></div></div>
         <div class="meta"><span class="badge"><span class="k">Uzrast</span><span class="pegi">PEGI 7</span></span><span class="badge"><span class="k">Kupovine</span><span class="v mid">Da — predmeti za izgled lika</span></span><span class="badge"><span class="k">Nasumične nagrade</span><span class="v no">Ne</span></span></div>
       </article>
@@ -691,7 +751,7 @@
         <p class="g-desc">Roblox ima veliki kreativni potencijal, ali i najviše rizika na ovom spisku. Nalog mora biti pažljivo podešen pre korišćenja.</p>
         <figure class="game-media"><img class="game-icon" src="assets/roblox-icon.png" alt="Roblox ikonica"><img class="game-shot" src="assets/roblox-shot.png" alt="Roblox snimak ekrana"></figure>
         <div class="cautions"><span class="ctag people">Kontakt sa nepoznatim odraslima</span><span class="ctag money">Robux — laka potrošnja</span></div>
-        <div class="cols"><div class="col good"><h4>Šta razvija</h4><ul><li>Dete može i da <strong>pravi i programira</strong> igre (Lua).</li><li>Platforma nudi veliku raznovrsnost sadržaja.</li><li>Druženje sa poznatim vršnjacima; deo igara ima edukativnu vrednost.</li></ul></div>
+        <div class="cols"><div class="col good"><h4>Šta igra angažuje</h4><ul><li>Osim igranja, dete može i da <strong>pravi i skriptuje</strong> sopstvene igre (Lua).</li><li>Veliku raznovrsnost sadržaja.</li><li>Zajedničku igru sa poznatim vršnjacima; deo sadržaja je edukativnog tipa.</li></ul></div>
         <div class="col watch"><h4>Na šta obratiti pažnju</h4><ul><li>Otvorena platforma i ćaskanje mogu dovesti do neprimerenog sadržaja i kontakta sa nepoznatima.</li><li>Robux omogućava prekomernu potrošnju; neke igre imaju mehanike nalik kockanju.</li><li>Uz dečji nalog (Kids/Select) i jasne limite rizik je znatno manji.</li></ul></div></div>
         <div class="meta"><span class="badge"><span class="k">Uzrast</span><span class="pegi">PEGI · uz nadzor</span></span><span class="badge"><span class="k">Kupovine</span><span class="v yes">Da — Robux</span></span><span class="badge"><span class="k">Nasumične nagrade</span><span class="v mid">Ponegde</span></span></div>
       </article>
@@ -700,7 +760,7 @@
         <p class="g-desc">Brzi mečevi od par minuta, dobro dizajnirani — ali sa nasumičnim nagradama i napretkom koji košta.</p>
         <figure class="game-media"><img class="game-icon" src="assets/brawl-stars-icon.png" alt="Brawl Stars ikonica"><img class="game-shot" src="assets/brawl-stars-shot.png" alt="Brawl Stars snimak ekrana"></figure>
         <div class="cautions"><span class="ctag people">Stranci i ćaskanje</span><span class="ctag money">Napredak košta</span><span class="ctag comp">Frustracija</span></div>
-        <div class="cols"><div class="col good"><h4>Šta razvija</h4><ul><li>Timski rad, pozicioniranje i brzu taktiku.</li><li>Razumevanje uloga likova i saradnju u kratkim mečevima.</li><li>Igranje sa poznatim vršnjacima kroz klubove.</li></ul></div>
+        <div class="cols"><div class="col good"><h4>Šta igra angažuje</h4><ul><li>Timsku igru 3-na-3: pozicioniranje i brzu taktiku.</li><li>Različite likove sa različitim ulogama.</li><li>Kratke mečeve; igranje sa poznatim vršnjacima kroz klubove.</li></ul></div>
         <div class="col watch"><h4>Na šta obratiti pažnju</h4><ul><li>PvP mečevi su protiv nepoznatih igrača; klubovi imaju ćaskanje.</li><li>Nadogradnja likova košta, što može stvoriti razlike u snazi.</li><li>Loš niz mečeva može dovesti do frustracije.</li></ul></div></div>
         <div class="meta"><span class="badge"><span class="k">Uzrast</span><span class="pegi">PEGI 7</span></span><span class="badge"><span class="k">Kupovine</span><span class="v yes">Da — utiču na napredak</span></span><span class="badge"><span class="k">Nasumične nagrade</span><span class="v yes">Da — Starr / Chaos Drops</span></span></div>
       </article>
@@ -709,7 +769,7 @@
         <p class="g-desc">Sto igrača se takmiči dok ne ostane poslednji preživeli. Prikaz je crtani i bez krvi, ali igra ima snažnu monetizaciju kroz kozmetičke predmete.</p>
         <figure class="game-media"><img class="game-icon" src="assets/fortnite-icon.png" alt="Fortnite ikonica"><img class="game-shot" src="assets/fortnite-shot.png" alt="Fortnite snimak ekrana"></figure>
         <div class="cautions"><span class="ctag people">Glasovno ćaskanje sa strancima</span><span class="ctag money">Pritisak da se troši</span></div>
-        <div class="cols"><div class="col good"><h4>Šta razvija</h4><ul><li>Nišanjenje, prostornu svest, odluke pod pritiskom.</li><li>Mehanika građenja je kognitivno zahtevna.</li><li>Timski rad; Creative uči dizajn i kod. Kupuje se samo izgled.</li></ul></div>
+        <div class="cols"><div class="col good"><h4>Šta igra angažuje</h4><ul><li>Nišanjenje, prostornu svest i brze odluke pod pritiskom.</li><li>Građenje zaklona u realnom vremenu — više radnji istovremeno.</li><li>Timsku igru; Creative režim omogućava pravljenje i skriptovanje mapa. Kupuje se samo izgled.</li></ul></div>
         <div class="col watch"><h4>Na šta obratiti pažnju</h4><ul><li>Glasovno ćaskanje sa strancima treba ograničiti na „samo prijatelji".</li><li>Postoji jak pritisak na potrošnju kroz rotirajuću prodavnicu i sezonsku propusnicu.</li><li>Od 2026. kreatori prodaju predmete u mapama; deo sadržaja može sadržati mehanike nalik kockanju.</li></ul></div></div>
         <div class="meta"><span class="badge"><span class="k">Uzrast</span><span class="pegi">PEGI 12</span></span><span class="badge"><span class="k">Kupovine</span><span class="v mid">Da — predmeti za izgled lika</span></span><span class="badge"><span class="k">Nasumične nagrade</span><span class="v no">Ne (u osnovnoj igri)</span></span></div>
       </article>
@@ -718,7 +778,7 @@
         <p class="g-desc">Igra se sastoji od zahtevnih nivoa u ritmu muzike. Dete više puta pokušava isti obrazac dok ga ne savlada.</p>
         <figure class="game-media"><img class="game-icon" src="assets/geometry-dash-icon.png" alt="Geometry Dash ikonica"><img class="game-shot" src="assets/geometry-dash-shot.png" alt="Geometry Dash snimak ekrana"></figure>
         <div class="cautions"><span class="ctag min">Praktično bez rizika</span></div>
-        <div class="cols"><div class="col good"><h4>Šta razvija</h4><ul><li>Upornost i toleranciju na neuspeh.</li><li>Preciznost, tajming i pamćenje obrazaca.</li><li>Osećaj za ritam; editor nivoa uči dizajn.</li></ul></div>
+        <div class="cols"><div class="col good"><h4>Šta igra angažuje</h4><ul><li>Ponavljanje i istrajnost — isti obrazac se pokušava više puta.</li><li>Preciznost, tajming i pamćenje obrazaca.</li><li>Praćenje ritma; editor za pravljenje sopstvenih nivoa.</li></ul></div>
         <div class="col watch"><h4>Na šta obratiti pažnju</h4><ul><li>Igra može izazvati frustraciju zbog čestog ponavljanja nivoa.</li><li>Korisnički nivoi mogu imati poneko neprimereno ime, ali nema direktnog kontakta sa strancima.</li></ul></div></div>
         <div class="meta"><span class="badge"><span class="k">Uzrast</span><span class="pegi">PEGI 3</span></span><span class="badge"><span class="k">Kupovine</span><span class="v no">Minimalne</span></span><span class="badge"><span class="k">Nasumične nagrade</span><span class="v no">Ne</span></span></div>
       </article>
@@ -727,7 +787,7 @@
         <p class="g-desc">Likovi prolaze kroz prepreke i ispadaju rundu po rundu dok ne ostane pobednik.</p>
         <figure class="game-media"><img class="game-icon" src="assets/fall-guys-icon.jpg" alt="Fall Guys ikonica"><img class="game-shot" src="assets/fall-guys-shot.jpg" alt="Fall Guys snimak ekrana"></figure>
         <div class="cautions"><span class="ctag min">Blag rizik</span><span class="ctag money">Kupovina izgleda lika</span></div>
-        <div class="cols"><div class="col good"><h4>Šta razvija</h4><ul><li>Koordinaciju i brze reakcije.</li><li>Sportski odnos prema porazu, jer je neuspeh prikazan blago i bez ozbiljnih posledica.</li><li>Timske runde podstiču saradnju; igra je nenasilna.</li></ul></div>
+        <div class="cols"><div class="col good"><h4>Šta igra angažuje</h4><ul><li>Koordinaciju i brze reakcije na prepreke.</li><li>Kratke runde sa blagim porazom, bez ozbiljnih posledica.</li><li>Timske runde uključuju saradnju; igra je nenasilna.</li></ul></div>
         <div class="col watch"><h4>Na šta obratiti pažnju</h4><ul><li>Kozmetička prodavnica i sezonska propusnica stvaraju pritisak na potrošnju, iako kupovine utiču samo na izgled.</li><li>Igra je online, ali ima vrlo ograničeno ćaskanje sa strancima, što smanjuje rizik.</li></ul></div></div>
         <div class="meta"><span class="badge"><span class="k">Uzrast</span><span class="pegi">PEGI 3</span></span><span class="badge"><span class="k">Kupovine</span><span class="v mid">Da — predmeti za izgled lika</span></span><span class="badge"><span class="k">Nasumične nagrade</span><span class="v no">Ne</span></span></div>
       </article>
@@ -736,7 +796,7 @@
         <p class="g-desc">Posada obavlja zadatke, a varalica ih potajno „eliminiše" — razgovorom i glasanjem tražite varalicu.</p>
         <figure class="game-media"><img class="game-icon" src="assets/among-us-icon.png" alt="Among Us ikonica"><img class="game-shot" src="assets/among-us-shot.png" alt="Among Us snimak ekrana"></figure>
         <div class="cautions"><span class="ctag people">Stranci u javnim sobama</span></div>
-        <div class="cols"><div class="col good"><h4>Šta razvija</h4><ul><li>Logičko rasuđivanje, argumentaciju i tumačenje ponašanja drugih igrača.</li><li>Komunikaciju i timski rad.</li><li>Najbezbednije je igranje u privatnoj sobi sa poznatim osobama.</li></ul></div>
+        <div class="cols"><div class="col good"><h4>Šta igra angažuje</h4><ul><li>Rasuđivanje i argumentovanje pred grupom; tumačenje ponašanja drugih igrača.</li><li>Komunikaciju, dogovaranje i glasanje.</li><li>Zajedničku igru sa drugima (najbolje u privatnoj sobi sa poznatima).</li></ul></div>
         <div class="col watch"><h4>Na šta obratiti pažnju</h4><ul><li>Javne sobe uključuju ćaskanje sa strancima. Privatna soba znatno smanjuje taj rizik.</li><li>Prevara je osnovna mehanika igre i nekoj mlađoj deci može teško pasti.</li><li>Prisutno je blago crtano nasilje.</li></ul></div></div>
         <div class="meta"><span class="badge"><span class="k">Uzrast</span><span class="pegi">PEGI 7</span></span><span class="badge"><span class="k">Kupovine</span><span class="v mid">Da — predmeti za izgled lika / reklame</span></span><span class="badge"><span class="k">Nasumične nagrade</span><span class="v no">Ne</span></span></div>
       </article>
@@ -745,7 +805,7 @@
         <p class="g-desc">Mobilna igra slična Fall Guys-u, sa brzim trkama kroz prepreke. Zabavna je, ali ima izraženu komercijalnu strukturu.</p>
         <figure class="game-media"><img class="game-icon" src="assets/stumble-guys-icon.png" alt="Stumble Guys ikonica"><img class="game-shot" src="assets/stumble-guys-shot.png" alt="Stumble Guys snimak ekrana"></figure>
         <div class="cautions"><span class="ctag ads">Mnogo reklama</span><span class="ctag money">Agresivna monetizacija</span></div>
-        <div class="cols"><div class="col good"><h4>Šta razvija</h4><ul><li>Brze reflekse i reakcije.</li><li>Kratke runde; radi na slabijim telefonima.</li><li>Nenasilno.</li></ul></div>
+        <div class="cols"><div class="col good"><h4>Šta igra angažuje</h4><ul><li>Brze reflekse i reakcije.</li><li>Kratke runde; radi i na slabijim telefonima.</li><li>Nenasilan sadržaj.</li></ul></div>
         <div class="col watch"><h4>Na šta obratiti pažnju</h4><ul><li>Besplatna verzija prikazuje veliki broj reklama.</li><li>Gacha mehanike nude nasumične skinove za tokene ili gledanje reklama.</li><li>Postoji snažan pritisak na potrošnju, iako je igra namenjena deci.</li></ul></div></div>
         <div class="meta"><span class="badge"><span class="k">Uzrast</span><span class="pegi">PEGI 7</span></span><span class="badge"><span class="k">Kupovine</span><span class="v yes">Da — izražene</span></span><span class="badge"><span class="k">Nasumične nagrade</span><span class="v yes">Da — gacha</span></span></div>
       </article>
@@ -754,7 +814,7 @@
         <p class="g-desc">Odlična za strateško razmišljanje — ali od svih na spisku najagresivnija po pitanju trošenja.</p>
         <figure class="game-media"><img class="game-icon" src="assets/clash-royale-icon.png" alt="Clash Royale ikonica"><img class="game-shot" src="assets/clash-royale-shot.png" alt="Clash Royale snimak ekrana"></figure>
         <div class="cautions"><span class="ctag money">Najizraženija monetizacija</span><span class="ctag comp">Rang-lista, frustracija</span></div>
-        <div class="cols"><div class="col good"><h4>Šta razvija</h4><ul><li>Strateško razmišljanje i planiranje.</li><li>Upravljanje eliksirom i pravljenje špila.</li><li>Prilagođavanje, tajming, strpljenje. Ćaskanje ograničeno na gotove poruke.</li></ul></div>
+        <div class="cols"><div class="col good"><h4>Šta igra angažuje</h4><ul><li>Strateško odlučivanje u realnom vremenu.</li><li>Upravljanje resursom (eliksir) i sastavljanje špila.</li><li>Prilagođavanje protivniku i tajming poteza. Ćaskanje ograničeno na gotove poruke.</li></ul></div>
         <div class="col watch"><h4>Na šta obratiti pažnju</h4><ul><li>Nadograđivanje karata značajno zavisi od ulaganja vremena ili novca.</li><li>Nasumični sanduci i „Evolutions" mehanike često se doživljavaju kao pay-to-win.</li><li>Rang-lista protiv nepoznatih igrača može dovesti do frustracije.</li></ul></div></div>
         <div class="meta"><span class="badge"><span class="k">Uzrast</span><span class="pegi">PEGI 7</span></span><span class="badge"><span class="k">Kupovine</span><span class="v yes">Da — snažno utiču</span></span><span class="badge"><span class="k">Nasumične nagrade</span><span class="v yes">Da — sanduci</span></span></div>
       </article>
@@ -762,11 +822,26 @@
     </div>
   </section>
 
+  <!-- ============ REFERENCE ============ -->
+  <section id="reference">
+    <div class="refs-head">
+      <h2 class="refs-title">Reference</h2>
+    </div>
+    <div class="refs">
+      <ul>
+        <li>Clemenson i sar. (2019). Improving hippocampal memory through the experience of a rich Minecraft environment. <i>Frontiers in Behavioral Neuroscience</i>.</li>
+        <li>García-Álvarez i Acevedo-Borrega (2025). Minecraft as a pedagogical tool: A systematic literature review (2014–2024). <i>Games and Culture</i>.</li>
+        <li>Jalanko, P., Leppänen, M. H., Bond, B., Laukkanen, J. A., Lakka, T. A., i Haapala, E. A. (2026). Associations of physical activity and sedentary time from childhood to adolescence with cognition in adolescence: The PANIC Study. <i>Pediatric Exercise Science, 38</i>(3), 268. https://doi.org/10.1123/pes.2025-0083</li>
+        <li>Parong, J., i Green, C. S. (2023). How video games change the brain. <i>Frontiers for Young Minds, 11</i>, 1177758. https://doi.org/10.3389/frym.2023.1177758</li>
+        <li>Shoshani i sar. (2021). The Fortnite social paradox. <i>Computers in Human Behavior</i>.</li>
+        <li>Slattery i sar. (2025). Assessing the benefits of digital game-based learning with Minecraft in children, adolescents and young adults: A broad systematic review. <i>Review of Education</i>.</li>
+      </ul>
+    </div>
+  </section>
+
   <!-- FOOTER -->
   <footer>
-    <h3>Osnovna poruka</h3>
-    <p>Kada su podešavanja telefona završena, PEGI oznake pravilno protumačene, igre sagledane po sadržaju i mehanikama, a kupovine zaštićene šifrom, dete može bezbednije da koristi digitalne sadržaje. Tehnologija se menja, ali osnovna pitanja ostaju ista: <strong>da li je sadržaj primeren, koje veštine podstiče, i da li postoji pritisak na plaćanje ili nasumične nagrade.</strong></p>
-    <div class="share"><b>Preporučuje se deljenje vodiča sa drugim roditeljima.</b> Vodič je najkorisniji kada stigne do porodica koje ne znaju da ova podešavanja postoje.</div>
+    <div class="share"><b>Podelite ovaj vodič sa drugim roditeljima.</b> Vodič je najkorisniji kada stigne do porodica koje ne znaju da ova podešavanja postoje.</div>
   </footer>
 
 </main>
@@ -794,7 +869,7 @@
     var links = Array.prototype.slice.call(document.querySelectorAll('.nav-links a'));
     var map = {};
     links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
-    var secs = ['telefon','novac','pegi','igre'].map(function(id){return document.getElementById(id);});
+    var secs = ['telefon','novac','pegi','igre','reference'].map(function(id){return document.getElementById(id);});
     if('IntersectionObserver' in window){
       var spy = new IntersectionObserver(function(es){
         es.forEach(function(e){
